@@ -44,6 +44,23 @@
     <Reference Include="TextFileContentExtension" />
     <Reference Include="AnimationExtension" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="PappiAnimA1.png">
+      <Name>PappiAnimA1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="PappiAnimA2.png">
+      <Name>PappiAnimA2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="PappiAnimA3.png">
+      <Name>PappiAnimA3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
   <!--  To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
