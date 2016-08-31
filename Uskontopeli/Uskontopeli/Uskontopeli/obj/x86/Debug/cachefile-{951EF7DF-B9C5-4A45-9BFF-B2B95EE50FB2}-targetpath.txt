@@ -1,0 +1,3 @@
+Content\PappiAnimA1.xnb
+Content\PappiAnimA2.xnb
+Content\PappiAnimA3.xnb
