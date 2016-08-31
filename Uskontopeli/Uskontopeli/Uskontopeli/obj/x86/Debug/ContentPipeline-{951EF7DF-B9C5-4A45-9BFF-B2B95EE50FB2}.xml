@@ -8,7 +8,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\PappiAnimA1.xnb</Output>
-      <Time>2016-08-31T19:31:18.9248725+03:00</Time>
+      <Time>2016-08-31T19:46:25.4007297+03:00</Time>
     </Item>
     <Item>
       <Source>PappiAnimA2.png</Source>
@@ -17,7 +17,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\PappiAnimA2.xnb</Output>
-      <Time>2016-08-31T19:31:19.0143849+03:00</Time>
+      <Time>2016-08-31T19:46:25.4022318+03:00</Time>
     </Item>
     <Item>
       <Source>PappiAnimA3.png</Source>
@@ -26,7 +26,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\PappiAnimA3.xnb</Output>
-      <Time>2016-08-31T19:31:19.0333874+03:00</Time>
+      <Time>2016-08-31T19:46:25.4072309+03:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
