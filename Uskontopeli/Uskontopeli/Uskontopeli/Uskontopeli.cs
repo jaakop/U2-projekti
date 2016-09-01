@@ -15,6 +15,8 @@ public class Uskontopeli : PhysicsGame
     private Image[] playerWalkUp = LoadImages("PappiAnimY1", "PappiAnimY2");
     private Image[] playerWalkLeft = LoadImages("PappiAnimV1", "PappiAnimV2", "PappiAnimV1", "PappiAnimV3");
     private Image[] playerWalkRight = LoadImages("PappiAnimO1", "PappiAnimO2", "PappiAnimO1", "PappiAnimO3");
+    private Image[] playerIdle = LoadImages("PappiAnimA1", "Pappi2");
+
 
     Image Pappikuva = LoadImage("PappiAnimA1");
 
@@ -66,7 +68,7 @@ public class Uskontopeli : PhysicsGame
         }, null);
         Keyboard.Listen(Key.S, ButtonState.Released, delegate
         {
-            player.Animation.Stop();
+            IdlePlayer();
             player.Stop();
         }, null );
 
@@ -84,7 +86,7 @@ public class Uskontopeli : PhysicsGame
         }, null);
         Keyboard.Listen(Key.D, ButtonState.Released, delegate
         {
-            player.Animation.Stop();
+            IdlePlayer();
             player.Stop();
         }, null);
 
@@ -102,7 +104,7 @@ public class Uskontopeli : PhysicsGame
         }, null);
         Keyboard.Listen(Key.W, ButtonState.Released, delegate
         {
-            player.Animation.Stop();
+            IdlePlayer();
             player.Stop();
         }, null);
 
@@ -120,7 +122,7 @@ public class Uskontopeli : PhysicsGame
         }, null);
         Keyboard.Listen(Key.A, ButtonState.Released, delegate
         {
-            player.Animation.Stop();
+            IdlePlayer();
             player.Stop();
         }, null);
 
@@ -131,4 +133,12 @@ public class Uskontopeli : PhysicsGame
     {
         player.Push(Vektori);
     }
+
+    void IdlePlayer()
+    {
+        player.Animation = new Animation(playerIdle);
+        player.Animation.FPS = 2;
+        player.Animation.Start();
+    }
+
 }
