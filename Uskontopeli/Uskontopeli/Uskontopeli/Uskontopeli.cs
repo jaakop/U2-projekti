@@ -11,7 +11,11 @@ public class Uskontopeli : PhysicsGame
 
     PhysicsObject player;
 
-    private Image[] playerWalkDown = LoadImages("PappiAnimA1", "PappiAnimA2", "PappiAnimA3");
+    private Image[] playerWalkDown = LoadImages("PappiAnimA1", "PappiAnimA2", "PappiAnimA1","PappiAnimA3");
+    private Image[] playerWalkUp = LoadImages("PappiAnimY1", "PappiAnimY2");
+    private Image[] playerWalkLeft = LoadImages("PappiAnimV1", "PappiAnimV2", "PappiAnimV1", "PappiAnimV3");
+    private Image[] playerWalkRight = LoadImages("PappiAnimO1", "PappiAnimO2", "PappiAnimO1", "PappiAnimO3");
+
     Image Pappikuva = LoadImage("PappiAnimA1");
 
     public override void Begin()
@@ -19,7 +23,7 @@ public class Uskontopeli : PhysicsGame
         AddPlayer();
         AddControlls();
 
-        //Camera.Follow(player);
+        Camera.Follow(player);
         Camera.Zoom(1);
 
     }
@@ -55,24 +59,68 @@ public class Uskontopeli : PhysicsGame
             player.Animation.Start();
 
         }, null);
+        Keyboard.Listen(Key.S, ButtonState.Down, delegate
+        {
+            MovePlayer(new Vector(0, -1000));
+
+        }, null);
         Keyboard.Listen(Key.S, ButtonState.Released, delegate
         {
             player.Animation.Stop();
             player.Stop();
         }, null );
-        Keyboard.Listen(Key.D, ButtonState.Down, MovePlayer, null, new Vector(1000, 0));
+
+        Keyboard.Listen(Key.D, ButtonState.Pressed, delegate
+        {
+            player.Animation = new Animation(playerWalkRight);
+            player.Animation.FPS = 10;
+            player.Animation.Start();
+
+        }, null);
+        Keyboard.Listen(Key.D, ButtonState.Down, delegate
+        {
+            MovePlayer(new Vector(1000, 0));
+
+        }, null);
         Keyboard.Listen(Key.D, ButtonState.Released, delegate
         {
+            player.Animation.Stop();
             player.Stop();
         }, null);
-        Keyboard.Listen(Key.W, ButtonState.Down, MovePlayer, null, new Vector(0, 1000));
+
+        Keyboard.Listen(Key.W, ButtonState.Pressed, delegate
+        {
+            player.Animation = new Animation(playerWalkUp);
+            player.Animation.FPS = 5;
+            player.Animation.Start();
+
+        }, null);
+        Keyboard.Listen(Key.W, ButtonState.Down, delegate
+        {
+            MovePlayer(new Vector(0, 1000));
+
+        }, null);
         Keyboard.Listen(Key.W, ButtonState.Released, delegate
         {
+            player.Animation.Stop();
             player.Stop();
         }, null);
-        Keyboard.Listen(Key.A, ButtonState.Down, MovePlayer, null, new Vector(-1000, 0));
+
+        Keyboard.Listen(Key.A, ButtonState.Pressed, delegate
+        {
+            player.Animation = new Animation(playerWalkLeft);
+            player.Animation.FPS = 10;
+            player.Animation.Start();
+
+        }, null);
+        Keyboard.Listen(Key.A, ButtonState.Down, delegate
+        {
+            MovePlayer(new Vector(-1000, 0));
+
+        }, null);
         Keyboard.Listen(Key.A, ButtonState.Released, delegate
         {
+            player.Animation.Stop();
             player.Stop();
         }, null);
 

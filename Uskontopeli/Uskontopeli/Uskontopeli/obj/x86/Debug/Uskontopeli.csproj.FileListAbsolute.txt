@@ -9,3 +9,11 @@ C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\obj\x86\Debu
 C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\PappiAnimA1.xnb
 C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\PappiAnimA2.xnb
 C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\PappiAnimA3.xnb
+C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\PappiAnimO1.xnb
+C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\PappiAnimO3.xnb
+C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\PappiAnimV1.xnb
+C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\PappiAnimV2.xnb
+C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\PappiAnimV3.xnb
+C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\PappiAnimY1.xnb
+C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\PappiAnimY2.xnb
+C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\PappiAnimO2.xnb

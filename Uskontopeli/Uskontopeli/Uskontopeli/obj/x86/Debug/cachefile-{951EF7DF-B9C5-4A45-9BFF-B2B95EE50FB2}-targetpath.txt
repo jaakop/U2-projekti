@@ -1,3 +1,11 @@
 Content\PappiAnimA1.xnb
 Content\PappiAnimA2.xnb
 Content\PappiAnimA3.xnb
+Content\PappiAnimO1.xnb
+Content\PappiAnimO3.xnb
+Content\PappiAnimV1.xnb
+Content\PappiAnimV2.xnb
+Content\PappiAnimV3.xnb
+Content\PappiAnimY1.xnb
+Content\PappiAnimY2.xnb
+Content\PappiAnimO2.xnb
