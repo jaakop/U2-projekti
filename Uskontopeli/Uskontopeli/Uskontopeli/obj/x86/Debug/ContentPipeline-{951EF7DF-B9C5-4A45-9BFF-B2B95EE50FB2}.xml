@@ -8,7 +8,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\PappiAnimA1.xnb</Output>
-      <Time>2016-08-31T19:46:25.4007297+03:00</Time>
+      <Time>2016-08-31T20:01:14.9697973+03:00</Time>
     </Item>
     <Item>
       <Source>PappiAnimA2.png</Source>
@@ -17,7 +17,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\PappiAnimA2.xnb</Output>
-      <Time>2016-08-31T19:46:25.4022318+03:00</Time>
+      <Time>2016-08-31T20:01:14.9762997+03:00</Time>
     </Item>
     <Item>
       <Source>PappiAnimA3.png</Source>
@@ -26,7 +26,79 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\PappiAnimA3.xnb</Output>
-      <Time>2016-08-31T19:46:25.4072309+03:00</Time>
+      <Time>2016-08-31T20:01:15.0023029+03:00</Time>
+    </Item>
+    <Item>
+      <Source>PaippiAnimO2.png</Source>
+      <Name>PaippiAnimO2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\PaippiAnimO2.xnb</Output>
+      <Time>2016-09-01T16:28:39.8820173+03:00</Time>
+    </Item>
+    <Item>
+      <Source>PappiAnimO1.png</Source>
+      <Name>PappiAnimO1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\PappiAnimO1.xnb</Output>
+      <Time>2016-09-01T16:28:39.9666481+03:00</Time>
+    </Item>
+    <Item>
+      <Source>PappiAnimO3.png</Source>
+      <Name>PappiAnimO3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\PappiAnimO3.xnb</Output>
+      <Time>2016-09-01T16:28:39.9666481+03:00</Time>
+    </Item>
+    <Item>
+      <Source>PappiAnimV1.png</Source>
+      <Name>PappiAnimV1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\PappiAnimV1.xnb</Output>
+      <Time>2016-09-01T16:28:39.9666481+03:00</Time>
+    </Item>
+    <Item>
+      <Source>PappiAnimV2.png</Source>
+      <Name>PappiAnimV2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\PappiAnimV2.xnb</Output>
+      <Time>2016-09-01T16:28:39.9666481+03:00</Time>
+    </Item>
+    <Item>
+      <Source>PappiAnimV3.png</Source>
+      <Name>PappiAnimV3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\PappiAnimV3.xnb</Output>
+      <Time>2016-09-01T16:28:39.9822798+03:00</Time>
+    </Item>
+    <Item>
+      <Source>PappiAnimY1.png</Source>
+      <Name>PappiAnimY1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\PappiAnimY1.xnb</Output>
+      <Time>2016-09-01T16:28:39.9822798+03:00</Time>
+    </Item>
+    <Item>
+      <Source>PappiAnimY2.png</Source>
+      <Name>PappiAnimY2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\PappiAnimY2.xnb</Output>
+      <Time>2016-09-01T16:28:39.9822798+03:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

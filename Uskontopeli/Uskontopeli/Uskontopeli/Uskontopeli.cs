@@ -11,7 +11,11 @@ public class Uskontopeli : PhysicsGame
 
     PhysicsObject player;
 
-    private Image[] playerWalkDown = LoadImages("PappiAnimA1", "PappiAnimA2", "PappiAnimA3");
+    private Image[] playerWalkDown = LoadImages("PappiAnimA1", "PappiAnimA2", "PappiAnimA1","PappiAnimA3");
+    private Image[] playerWalkUp = LoadImages("PappiAnimA1", "PappiAnimA2", "PappiAnimA1", "PappiAnimA3");
+    private Image[] playerWalkLeft = LoadImages("PappiAnimA1", "PappiAnimA2", "PappiAnimA1", "PappiAnimA3");
+    private Image[] playerWalkRight = LoadImages("PappiAnimA1", "PappiAnimA2", "PappiAnimA1", "PappiAnimA3");
+
     Image Pappikuva = LoadImage("PappiAnimA1");
 
     public override void Begin()
