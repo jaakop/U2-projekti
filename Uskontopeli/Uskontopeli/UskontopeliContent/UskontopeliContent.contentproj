@@ -62,8 +62,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PaippiAnimO2.png">
-      <Name>PaippiAnimO2</Name>
+    <Compile Include="PappiAnimO2.png">
+      <Name>PappiAnimO2</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

@@ -29,15 +29,6 @@
       <Time>2016-08-31T20:01:15.0023029+03:00</Time>
     </Item>
     <Item>
-      <Source>PaippiAnimO2.png</Source>
-      <Name>PaippiAnimO2</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\PaippiAnimO2.xnb</Output>
-      <Time>2016-09-01T16:28:39.8820173+03:00</Time>
-    </Item>
-    <Item>
       <Source>PappiAnimO1.png</Source>
       <Name>PappiAnimO1</Name>
       <Importer>TextureImporter</Importer>
@@ -99,6 +90,15 @@
       <Options>None</Options>
       <Output>C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\PappiAnimY2.xnb</Output>
       <Time>2016-09-01T16:28:39.9822798+03:00</Time>
+    </Item>
+    <Item>
+      <Source>PappiAnimO2.png</Source>
+      <Name>PappiAnimO2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\PappiAnimO2.xnb</Output>
+      <Time>2016-09-01T16:28:39.8820173+03:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
