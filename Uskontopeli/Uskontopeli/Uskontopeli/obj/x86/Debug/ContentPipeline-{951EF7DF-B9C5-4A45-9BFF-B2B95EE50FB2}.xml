@@ -8,7 +8,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\PappiAnimA1.xnb</Output>
-      <Time>2016-08-31T20:01:14.9697973+03:00</Time>
+      <Time>2016-09-01T18:09:26.9750998+03:00</Time>
     </Item>
     <Item>
       <Source>PappiAnimA2.png</Source>
@@ -17,7 +17,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\PappiAnimA2.xnb</Output>
-      <Time>2016-08-31T20:01:14.9762997+03:00</Time>
+      <Time>2016-09-01T18:09:26.9796012+03:00</Time>
     </Item>
     <Item>
       <Source>PappiAnimA3.png</Source>
@@ -26,7 +26,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\PappiAnimA3.xnb</Output>
-      <Time>2016-08-31T20:01:15.0023029+03:00</Time>
+      <Time>2016-09-01T18:09:26.9856018+03:00</Time>
     </Item>
     <Item>
       <Source>PappiAnimO1.png</Source>
@@ -35,7 +35,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\PappiAnimO1.xnb</Output>
-      <Time>2016-09-01T16:28:39.9666481+03:00</Time>
+      <Time>2016-09-01T18:09:27.1211254+03:00</Time>
     </Item>
     <Item>
       <Source>PappiAnimO3.png</Source>
@@ -44,7 +44,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\PappiAnimO3.xnb</Output>
-      <Time>2016-09-01T16:28:39.9666481+03:00</Time>
+      <Time>2016-09-01T18:09:27.1816319+03:00</Time>
     </Item>
     <Item>
       <Source>PappiAnimV1.png</Source>
@@ -53,7 +53,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\PappiAnimV1.xnb</Output>
-      <Time>2016-09-01T16:28:39.9666481+03:00</Time>
+      <Time>2016-09-01T18:09:27.2396398+03:00</Time>
     </Item>
     <Item>
       <Source>PappiAnimV2.png</Source>
@@ -62,7 +62,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\PappiAnimV2.xnb</Output>
-      <Time>2016-09-01T16:28:39.9666481+03:00</Time>
+      <Time>2016-09-01T18:09:27.2921466+03:00</Time>
     </Item>
     <Item>
       <Source>PappiAnimV3.png</Source>
@@ -71,7 +71,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\PappiAnimV3.xnb</Output>
-      <Time>2016-09-01T16:28:39.9822798+03:00</Time>
+      <Time>2016-09-01T18:09:27.3136489+03:00</Time>
     </Item>
     <Item>
       <Source>PappiAnimY1.png</Source>
@@ -80,7 +80,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\PappiAnimY1.xnb</Output>
-      <Time>2016-09-01T16:28:39.9822798+03:00</Time>
+      <Time>2016-09-01T18:09:27.3356514+03:00</Time>
     </Item>
     <Item>
       <Source>PappiAnimY2.png</Source>
@@ -89,7 +89,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\PappiAnimY2.xnb</Output>
-      <Time>2016-09-01T16:28:39.9822798+03:00</Time>
+      <Time>2016-09-01T18:09:27.3696552+03:00</Time>
     </Item>
     <Item>
       <Source>PappiAnimO2.png</Source>
@@ -98,7 +98,16 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\PappiAnimO2.xnb</Output>
-      <Time>2016-09-01T16:28:39.8820173+03:00</Time>
+      <Time>2016-09-01T18:09:27.1261249+03:00</Time>
+    </Item>
+    <Item>
+      <Source>Pappi2.png</Source>
+      <Name>Pappi2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\Pappi2.xnb</Output>
+      <Time>2016-09-01T18:16:10.9879035+03:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
