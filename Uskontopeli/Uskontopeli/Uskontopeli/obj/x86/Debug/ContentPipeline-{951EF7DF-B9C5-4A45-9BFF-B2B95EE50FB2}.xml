@@ -109,6 +109,15 @@
       <Output>C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\Pappi2.xnb</Output>
       <Time>2016-09-01T19:57:30.6026868+03:00</Time>
     </Item>
+    <Item>
+      <Source>Projectile1.png</Source>
+      <Name>Projectile1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\Projectile1.xnb</Output>
+      <Time>2016-09-03T19:22:45.1200296+03:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{951EF7DF-B9C5-4A45-9BFF-B2B95EE50FB2}</ContentProjectGUID>
