@@ -30,7 +30,7 @@ public class Uskontopeli : PhysicsGame
         AddControlls();
 
         IsMouseVisible = true;
-       // Camera.Follow(player);
+        Camera.Follow(player);
         Camera.Zoom(1);
 
     }
@@ -42,6 +42,7 @@ public class Uskontopeli : PhysicsGame
         player.Color = Color.HotPink;
         player.Image = Pappikuva;
         player.CanRotate = false;
+        player.MakeStatic();
 
         player.MaxVelocity = 500;
 
