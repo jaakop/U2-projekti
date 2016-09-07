@@ -118,6 +118,33 @@
       <Output>C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\Projectile1.xnb</Output>
       <Time>2016-09-03T19:22:45.1200296+03:00</Time>
     </Item>
+    <Item>
+      <Source>RItariAnim1.png</Source>
+      <Name>RItariAnim1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\RItariAnim1.xnb</Output>
+      <Time>2016-09-07T18:59:10.267227+03:00</Time>
+    </Item>
+    <Item>
+      <Source>RItariAnim2.png</Source>
+      <Name>RItariAnim2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\RItariAnim2.xnb</Output>
+      <Time>2016-09-07T18:59:10.2757281+03:00</Time>
+    </Item>
+    <Item>
+      <Source>UskontoKartta1.png</Source>
+      <Name>UskontoKartta1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\UskontoKartta1.xnb</Output>
+      <Time>2016-09-07T19:07:13.993198+03:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{951EF7DF-B9C5-4A45-9BFF-B2B95EE50FB2}</ContentProjectGUID>

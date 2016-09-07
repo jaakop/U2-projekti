@@ -25,26 +25,48 @@ public class Uskontopeli : PhysicsGame
 
     public override void Begin()
     {
-        AddPlayer();
-        CreateEnemy1();
         AddControlls();
+        Luokentta();
 
+        //IsFullScreen = true;
         IsMouseVisible = true;
         Camera.Follow(player);
-        Camera.Zoom(1);
+        //Camera.Zoom(1);
+        
 
     }
 
-    void AddPlayer()
+    void Luokentta()
+    {
+
+
+        ColorTileMap ruudut = ColorTileMap.FromLevelAsset("UskontoKartta1");
+        ruudut.SetTileMethod(Color.Magenta, Addplayer);
+        ruudut.SetTileMethod(Color.Black, AddWall);
+        ruudut.SetTileMethod(Color.Blue, CreateEnemy1);
+
+
+        ruudut.Execute();
+    }
+
+
+    void AddWall(Vector paikka, double korkeus, double leveys)
+    {
+        PhysicsObject Wall = new PhysicsObject(100, 100);
+        Wall.Color = Color.Black;
+        Wall.CollisionIgnoreGroup = 1;
+        Wall.Position = paikka;
+    }
+
+    void Addplayer(Vector paikka, double korkeus, double leveys)
     {
         player = new PhysicsObject(75, 100);
-        player.Shape = Shape.Rectangle;
-        player.Color = Color.HotPink;
         player.Image = Pappikuva;
+        player.Position = paikka;
         player.CanRotate = false;
         player.MakeStatic();
-
         player.MaxVelocity = 500;
+        Add(player);
 
         playerWeapon1 = new AssaultRifle(30, 10);
         playerWeapon1.ProjectileCollision = Hit;
@@ -54,8 +76,6 @@ public class Uskontopeli : PhysicsGame
         playerWeapon1.AttackSound = null;
         player.Add(playerWeapon1);
         
-
-        Add(player);
 
     }
 
@@ -180,17 +200,16 @@ public class Uskontopeli : PhysicsGame
 
     void Aim (AnalogState hiirenLiike)
     {
-        Vector suunta = (Mouse.PositionOnWorld - playerWeapon1.AbsolutePosition).Normalize();
-        playerWeapon1.Angle = suunta.Angle;
+      //Vector suunta = (Mouse.PositionOnWorld - playerWeapon1.AbsolutePosition).Normalize();
+      //playerWeapon1.Angle = suunta.Angle;
     }
 
-    void CreateEnemy1 ()
+    void CreateEnemy1 (Vector paikka, double korkeus, double leveys)
     {
         Enemy1 = new PhysicsObject(75, 100);
         Enemy1.Color = Color.HotPink;
         Enemy1.Shape = Shape.Rectangle;
-        Enemy1.Y = 10;
-        Enemy1.X = 100;
+        Enemy1.Position = paikka;
         Enemy1.MakeStatic();
         Enemy1.CanRotate = false;
         Add(Enemy1);
