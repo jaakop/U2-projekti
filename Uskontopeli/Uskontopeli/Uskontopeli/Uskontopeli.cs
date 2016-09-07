@@ -10,6 +10,7 @@ public class Uskontopeli : PhysicsGame
 {
 
     PhysicsObject player;
+    PhysicsObject Enemy1;
 
     AssaultRifle playerWeapon1;
 
@@ -25,10 +26,11 @@ public class Uskontopeli : PhysicsGame
     public override void Begin()
     {
         AddPlayer();
+        CreateEnemy1();
         AddControlls();
 
         IsMouseVisible = true;
-        Camera.Follow(player);
+       // Camera.Follow(player);
         Camera.Zoom(1);
 
     }
@@ -39,6 +41,8 @@ public class Uskontopeli : PhysicsGame
         player.Shape = Shape.Rectangle;
         player.Color = Color.HotPink;
         player.Image = Pappikuva;
+        player.CanRotate = false;
+
         player.MaxVelocity = 500;
 
         playerWeapon1 = new AssaultRifle(30, 10);
@@ -178,5 +182,18 @@ public class Uskontopeli : PhysicsGame
         Vector suunta = (Mouse.PositionOnWorld - playerWeapon1.AbsolutePosition).Normalize();
         playerWeapon1.Angle = suunta.Angle;
     }
+
+    void CreateEnemy1 ()
+    {
+        Enemy1 = new PhysicsObject(75, 100);
+        Enemy1.Color = Color.HotPink;
+        Enemy1.Shape = Shape.Rectangle;
+        Enemy1.Y = 10;
+        Enemy1.X = 100;
+        Enemy1.MakeStatic();
+        Enemy1.CanRotate = false;
+        Add(Enemy1);
+    }
+
 
 }
