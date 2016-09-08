@@ -11,6 +11,7 @@ public class Uskontopeli : PhysicsGame
 
     PhysicsObject player;
     PhysicsObject Enemy1;
+    PhysicsObject ammus;
 
     AssaultRifle playerWeapon1;
 
@@ -30,8 +31,8 @@ public class Uskontopeli : PhysicsGame
 
         //IsFullScreen = true;
         IsMouseVisible = true;
-        Camera.Follow(player);
-        //Camera.Zoom(1);
+       Camera.Follow(player);
+      // Camera.Zoom(5);
         
 
     }
@@ -40,13 +41,13 @@ public class Uskontopeli : PhysicsGame
     {
 
 
-        ColorTileMap ruudut = ColorTileMap.FromLevelAsset("UskontoKartta1");
-        ruudut.SetTileMethod(Color.Magenta, Addplayer);
-        ruudut.SetTileMethod(Color.Black, AddWall);
-        ruudut.SetTileMethod(Color.Blue, CreateEnemy1);
+        ColorTileMap kentta = ColorTileMap.FromLevelAsset("Kartta1");
+        kentta.SetTileMethod("#FFFF00B2", Addplayer);
+        kentta.SetTileMethod("#FF000000", AddWall);
+        kentta.SetTileMethod("#FF0015FF", CreateEnemy1);
 
 
-        ruudut.Execute();
+        kentta.Execute(100, 100);
     }
 
 
@@ -56,6 +57,9 @@ public class Uskontopeli : PhysicsGame
         Wall.Color = Color.Black;
         Wall.CollisionIgnoreGroup = 1;
         Wall.Position = paikka;
+        Wall.CanRotate = false;
+        Wall.IgnoresCollisionResponse = true;
+        Add(Wall);
     }
 
     void Addplayer(Vector paikka, double korkeus, double leveys)
@@ -66,7 +70,7 @@ public class Uskontopeli : PhysicsGame
         player.CanRotate = false;
         player.MakeStatic();
         player.MaxVelocity = 500;
-        Add(player);
+        Add(player, 1);
 
         playerWeapon1 = new AssaultRifle(30, 10);
         playerWeapon1.ProjectileCollision = Hit;
@@ -186,7 +190,7 @@ public class Uskontopeli : PhysicsGame
 
     void Shoot(AssaultRifle weapon)
     {
-        PhysicsObject ammus = weapon.Shoot();
+        ammus = playerWeapon1.Shoot();
         if(ammus != null)
         {
             //ammus.RotateImage = false;
@@ -200,8 +204,8 @@ public class Uskontopeli : PhysicsGame
 
     void Aim (AnalogState hiirenLiike)
     {
-      //Vector suunta = (Mouse.PositionOnWorld - playerWeapon1.AbsolutePosition).Normalize();
-      //playerWeapon1.Angle = suunta.Angle;
+      Vector suunta = (Mouse.PositionOnWorld - playerWeapon1.AbsolutePosition).Normalize();
+      playerWeapon1.Angle = suunta.Angle;
     }
 
     void CreateEnemy1 (Vector paikka, double korkeus, double leveys)
@@ -213,6 +217,11 @@ public class Uskontopeli : PhysicsGame
         Enemy1.MakeStatic();
         Enemy1.CanRotate = false;
         Add(Enemy1);
+
+        FollowerBrain Enemy1brain = new FollowerBrain(player);
+        Enemy1brain.Speed = 2000;
+        Enemy1brain.Owner = Enemy1;
+        Enemy1brain.Active = true;
     }
 
 
