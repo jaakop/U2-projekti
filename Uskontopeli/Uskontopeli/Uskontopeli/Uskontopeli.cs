@@ -11,6 +11,7 @@ public class Uskontopeli : PhysicsGame
 
     PhysicsObject player;
     PhysicsObject Enemy1;
+    PhysicsObject ammus;
 
     AssaultRifle playerWeapon1;
 
@@ -56,6 +57,8 @@ public class Uskontopeli : PhysicsGame
         Wall.Color = Color.Black;
         Wall.CollisionIgnoreGroup = 1;
         Wall.Position = paikka;
+        Wall.CanRotate = false;
+        Wall.IgnoresCollisionResponse = true;
         Add(Wall);
     }
 
@@ -67,7 +70,7 @@ public class Uskontopeli : PhysicsGame
         player.CanRotate = false;
         player.MakeStatic();
         player.MaxVelocity = 500;
-        Add(player);
+        Add(player, 1);
 
         playerWeapon1 = new AssaultRifle(30, 10);
         playerWeapon1.ProjectileCollision = Hit;
@@ -187,7 +190,7 @@ public class Uskontopeli : PhysicsGame
 
     void Shoot(AssaultRifle weapon)
     {
-        PhysicsObject ammus = playerWeapon1.Shoot();
+        ammus = playerWeapon1.Shoot();
         if(ammus != null)
         {
             //ammus.RotateImage = false;
