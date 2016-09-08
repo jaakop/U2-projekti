@@ -137,12 +137,12 @@
       <Time>2016-09-07T18:59:10.2757281+03:00</Time>
     </Item>
     <Item>
-      <Source>UskontoKartta1.png</Source>
-      <Name>UskontoKartta1</Name>
+      <Source>Kartta1.png</Source>
+      <Name>Kartta1</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\UskontoKartta1.xnb</Output>
+      <Output>C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\Kartta1.xnb</Output>
       <Time>2016-09-07T19:07:13.993198+03:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>

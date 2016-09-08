@@ -130,8 +130,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="UskontoKartta1.png">
-      <Name>UskontoKartta1</Name>
+    <Compile Include="Kartta1.png">
+      <Name>Kartta1</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
