@@ -33,7 +33,7 @@ public class Uskontopeli : PhysicsGame
         IsFullScreen = true;
         IsMouseVisible = true;
         Camera.Follow(player);
-        // Camera.Zoom(5);
+        Camera.Zoom(2);
         
         IdlePlayer();
     }
@@ -55,8 +55,8 @@ public class Uskontopeli : PhysicsGame
         Wall.Color = Color.Black;
         Wall.CollisionIgnoreGroup = 1;
         Wall.Position = paikka;
+        Wall.MakeStatic();
         Wall.CanRotate = false;
-        Wall.IgnoresCollisionResponse = true;
         Add(Wall);
     }
 
@@ -66,7 +66,6 @@ public class Uskontopeli : PhysicsGame
         player.Image = Pappikuva;
         player.Position = paikka;
         player.CanRotate = false;
-        player.MakeStatic();
         player.MaxVelocity = 500;
         Add(player, 1);
 
@@ -183,7 +182,10 @@ public class Uskontopeli : PhysicsGame
     void Hit(PhysicsObject ammus, PhysicsObject target)
     {
         ammus.Destroy();
-
+        if (target.Tag == "Vihu")
+        {
+            target.Destroy();
+        }
     }
 
     void Shoot(AssaultRifle weapon)
@@ -212,13 +214,15 @@ public class Uskontopeli : PhysicsGame
         Enemy1.Color = Color.HotPink;
         Enemy1.Shape = Shape.Rectangle;
         Enemy1.Position = paikka;
-        Enemy1.MakeStatic();
         Enemy1.CanRotate = false;
+        Enemy1.Tag = "Vihu";
         Add(Enemy1);
+        
 
         FollowerBrain Enemy1brain = new FollowerBrain(player);
         Enemy1brain.Speed = 2000;
         Enemy1brain.Owner = Enemy1;
+        Enemy1brain.DistanceClose = 20000;
         Enemy1brain.Active = true;
     }
 
