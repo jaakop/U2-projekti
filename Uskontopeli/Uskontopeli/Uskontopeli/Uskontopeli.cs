@@ -26,26 +26,24 @@ public class Uskontopeli : PhysicsGame
 
     public override void Begin()
     {
+
         AddControlls();
         Luokentta();
 
-        //IsFullScreen = true;
+        IsFullScreen = true;
         IsMouseVisible = true;
-       Camera.Follow(player);
-      // Camera.Zoom(5);
+        Camera.Follow(player);
+        // Camera.Zoom(5);
         
-
+        IdlePlayer();
     }
 
     void Luokentta()
     {
-
-
         ColorTileMap kentta = ColorTileMap.FromLevelAsset("Kartta1");
         kentta.SetTileMethod("#FFFF00B2", Addplayer);
         kentta.SetTileMethod("#FF000000", AddWall);
         kentta.SetTileMethod("#FF0015FF", CreateEnemy1);
-
 
         kentta.Execute(100, 100);
     }
