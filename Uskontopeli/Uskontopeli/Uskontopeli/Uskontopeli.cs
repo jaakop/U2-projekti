@@ -12,6 +12,7 @@ public class Uskontopeli : PhysicsGame
     PhysicsObject player;
     PhysicsObject Enemy1;
     PhysicsObject ammus;
+    PhysicsObject Goal;
 
     AssaultRifle playerWeapon1;
 
@@ -44,6 +45,7 @@ public class Uskontopeli : PhysicsGame
         kentta.SetTileMethod("#FFFF00B2", Addplayer);
         kentta.SetTileMethod("#FF000000", AddWall);
         kentta.SetTileMethod("#FF0015FF", CreateEnemy1);
+        kentta.SetTileMethod("#FFFF000C", AddGoal);
 
         kentta.Execute(100, 100);
     }
@@ -67,6 +69,7 @@ public class Uskontopeli : PhysicsGame
         player.Position = paikka;
         player.CanRotate = false;
         player.MaxVelocity = 500;
+        player.Tag = "Pelaaja";
         Add(player, 1);
 
         playerWeapon1 = new AssaultRifle(30, 10);
@@ -167,6 +170,18 @@ public class Uskontopeli : PhysicsGame
         Keyboard.Listen(Key.Escape, ButtonState.Pressed, ConfirmExit, "Lopeta peli");
     }
 
+    void AddGoal(Vector paikka, double korkeus, double leveys)
+    {
+        Goal = new PhysicsObject(100, 100);
+        Goal.Position = paikka;
+        Goal.IsVisible = true;
+        Goal.Color = Color.Red;
+        Goal.IgnoresPhysicsLogics= true;
+        Add(Goal);
+
+        AddCollisionHandler(player, Goal,NextLevel);
+    }
+
     void MovePlayer(Vector Vektori )
     {
         player.Push(Vektori);
@@ -219,11 +234,31 @@ public class Uskontopeli : PhysicsGame
         Add(Enemy1);
         
 
-        FollowerBrain Enemy1brain = new FollowerBrain(player);
-        Enemy1brain.Speed = 2000;
-        Enemy1brain.Owner = Enemy1;
-        Enemy1brain.DistanceClose = 20000;
+        FollowerBrain Enemy1brain = new FollowerBrain("Pelaaja");
+        Enemy1brain.Speed = 200;
+        Enemy1brain.DistanceFar = 500;
+        Enemy1.Brain = Enemy1brain;
         Enemy1brain.Active = true;
+
+    }
+
+    void NextLevel(PhysicsObject tormaaja, PhysicsObject kohde)
+    {
+        kohde.Destroy();
+        ClearControls();
+        Camera.StopFollowing();
+        player.Restitution = 1000;
+
+        MessageDisplay.Add("Siirrytään seuraavaan tasoon...");
+
+        Timer NextLevelTimer = new Timer();
+        NextLevelTimer.Interval = 1;
+        NextLevelTimer.Timeout += delegate
+        {
+            Exit();
+        };
+        NextLevelTimer.Start();
+
     }
 
 
