@@ -67,6 +67,7 @@ public class Uskontopeli : PhysicsGame
         player.Position = paikka;
         player.CanRotate = false;
         player.MaxVelocity = 500;
+        player.Tag = "Pelaaja";
         Add(player, 1);
 
         playerWeapon1 = new AssaultRifle(30, 10);
@@ -219,11 +220,13 @@ public class Uskontopeli : PhysicsGame
         Add(Enemy1);
         
 
-        FollowerBrain Enemy1brain = new FollowerBrain(player);
-        Enemy1brain.Speed = 2000;
-        Enemy1brain.Owner = Enemy1;
-        Enemy1brain.DistanceClose = 20000;
+        FollowerBrain Enemy1brain = new FollowerBrain("Pelaaja");
+        Enemy1brain.Speed = 200;
+      //  Enemy1brain.Owner = Enemy1;
+        Enemy1brain.DistanceFar = 500;
+        Enemy1.Brain = Enemy1brain;
         Enemy1brain.Active = true;
+
     }
 
 
