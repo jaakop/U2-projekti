@@ -44,7 +44,7 @@ public class Uskontopeli : PhysicsGame
         ColorTileMap kentta = ColorTileMap.FromLevelAsset("Kartta1");
         kentta.SetTileMethod("#FFFF00B2", Addplayer);
         kentta.SetTileMethod("#FF000000", AddWall);
-       // kentta.SetTileMethod("#FF0015FF", CreateEnemy1);
+        kentta.SetTileMethod("#FF0015FF", CreateEnemy1);
         kentta.SetTileMethod("#FFFF000C", AddGoal);
 
         kentta.Execute(100, 100);
