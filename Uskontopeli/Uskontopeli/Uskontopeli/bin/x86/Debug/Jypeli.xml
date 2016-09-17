@@ -2580,54 +2580,6 @@
             Peliluokka reaaliaikaisille peleille.
             </summary>
         </member>
-        <member name="M:Jypeli.Game.AddCustomHandler(System.Func{System.Boolean},System.Action)">
-            <summary>
-            Lisää vapaamuotoisen tapahtumankäsittelijän.
-            </summary>
-            <param name="condition">Ehto josta tapahtuma laukeaa.</param>
-            <param name="handler">Kutsuttava funktio.</param>
-        </member>
-        <member name="M:Jypeli.Game.AddCustomHandler``1(``0,System.Predicate{``0},System.Action{``0})">
-            <summary>
-            Lisää vapaamuotoisen tapahtumankäsittelijän.
-            </summary>
-            <typeparam name="T">Olion tyyppi.</typeparam>
-            <param name="obj">Olio, jota tapahtuma koskee.</param>
-            <param name="condition">Ehto josta tapahtuma laukeaa.</param>
-            <param name="handler">Kutsuttava funktio.</param>
-            <returns></returns>
-        </member>
-        <member name="M:Jypeli.Game.AddCustomHandler``2(``0,``1,System.Func{``0,``1,System.Boolean},System.Action{``0,``1})">
-            <summary>
-            Lisää vapaamuotoisen tapahtumankäsittelijän.
-            </summary>
-            <typeparam name="T1">Olion 1 tyyppi.</typeparam>
-            <typeparam name="T2">Olion 2 tyyppi.</typeparam>
-            <param name="obj1">Ensimmäinen olio, jota tapahtuma koskee.</param>
-            <param name="obj2">Toinen olio, jota tapahtuma koskee.</param>
-            <param name="condition">Ehto josta tapahtuma laukeaa.</param>
-            <param name="handler">Kutsuttava funktio.</param>
-            <returns></returns>
-        </member>
-        <member name="M:Jypeli.Game.AddCustomHandler``3(``0,``1,``2,System.Func{``0,``1,``2,System.Boolean},System.Action{``0,``1,``2})">
-            <summary>
-            Lisää vapaamuotoisen tapahtumankäsittelijän.
-            </summary>
-            <typeparam name="T1">Olion 1 tyyppi.</typeparam>
-            <typeparam name="T2">Olion 2 tyyppi.</typeparam>
-            <typeparam name="T3">Olion 3 tyyppi.</typeparam>
-            <param name="obj1">Ensimmäinen olio, jota tapahtuma koskee.</param>
-            <param name="obj2">Toinen olio, jota tapahtuma koskee.</param>
-            <param name="obj3">Kolmas olio, jota tapahtuma koskee.</param>
-            <param name="condition">Ehto josta tapahtuma laukeaa.</param>
-            <param name="handler">Kutsuttava funktio.</param>
-            <returns></returns>
-        </member>
-        <member name="M:Jypeli.Game.UpdateHandlers(Jypeli.Time)">
-            <summary>
-            Kutsuu tapahtumankäsittelijöitä.
-            </summary>
-        </member>
         <member name="M:Jypeli.Game.#ctor">
             <summary>
             Alustaa uuden peliluokan.
@@ -3244,44 +3196,6 @@
             Mediasoitin.
             </summary>
         </member>
-        <member name="T:Jypeli.Game.CustomEventHandler">
-            <summary>
-            Vapaamuotoinen tapahtumankäsittelijä.
-            </summary>
-        </member>
-        <member name="M:Jypeli.Game.CustomEventHandler.#ctor(System.Func{System.Boolean},System.Action)">
-            <summary>
-            Luo uuden tapahtumankäsittelijän.
-            </summary>
-            <param name="condition">Ehto</param>
-            <param name="handler">Käsittelijä</param>
-        </member>
-        <member name="M:Jypeli.Game.CustomEventHandler.Destroy">
-            <summary>
-            Tuhoaa tapahtumankäsittelijän.
-            </summary>
-        </member>
-        <member name="M:Jypeli.Game.CustomEventHandler.Update(Jypeli.Time)">
-            <summary>
-            Päivittää tapahtumankäsittelijää (Jypeli kutsuu)
-            </summary>
-            <param name="time"></param>
-        </member>
-        <member name="P:Jypeli.Game.CustomEventHandler.IsDestroyed">
-            <summary>
-            Onko käsittelijä tuhottu.
-            </summary>
-        </member>
-        <member name="P:Jypeli.Game.CustomEventHandler.IsUpdated">
-            <summary>
-            Päivitetäänkö.
-            </summary>
-        </member>
-        <member name="E:Jypeli.Game.CustomEventHandler.Destroyed">
-            <summary>
-            Tapahtuu, kun tapahtumankäsittelijä tuhotaan.
-            </summary>
-        </member>
         <member name="T:Jypeli.PhysicsGame">
             <summary>
             Peli, jossa on fysiikan laskenta mukana. Peliin lisätyt <code>PhysicsObject</code>-oliot
@@ -3441,6 +3355,33 @@
             </summary>
             <param name="obj">Törmäävä olio.</param>
             <param name="tag">Törmättävän olion tagi.</param>
+            <param name="handler">Metodi, joka käsittelee törmäyksen (ei parametreja).</param>
+        </member>
+        <member name="M:Jypeli.PhysicsGameBase.AddCollisionHandler(Jypeli.PhysicsObject,System.Object,Jypeli.CollisionHandler{Jypeli.PhysicsObject,Jypeli.PhysicsStructure})">
+            <summary>
+            Määrää, mihin aliohjelmaan siirrytään kun 
+            fysiikkaolio <code>obj</code> törmää fysiikkarakenteeseen, jolla on tietty tagi <code>tag</code>.
+            </summary>
+            <param name="obj">Törmäävä olio.</param>
+            <param name="tag">Törmättävän olion tagi.</param>
+            <param name="handler">Metodi, joka käsittelee törmäyksen (ei parametreja).</param>
+        </member>
+        <member name="M:Jypeli.PhysicsGameBase.AddCollisionHandler(Jypeli.PhysicsStructure,System.Object,Jypeli.CollisionHandler{Jypeli.PhysicsStructure,Jypeli.PhysicsObject})">
+            <summary>
+            Määrää, mihin aliohjelmaan siirrytään kun 
+            fysiikkarakenne <code>obj</code> törmää fysiikkaolioon, jolla on tietty tagi <code>tag</code>.
+            </summary>
+            <param name="obj">Törmäävä rakenne.</param>
+            <param name="tag">Törmättävän olion tagi.</param>
+            <param name="handler">Metodi, joka käsittelee törmäyksen (ei parametreja).</param>
+        </member>
+        <member name="M:Jypeli.PhysicsGameBase.AddCollisionHandler(Jypeli.PhysicsStructure,System.Object,Jypeli.CollisionHandler{Jypeli.PhysicsStructure,Jypeli.PhysicsStructure})">
+            <summary>
+            Määrää, mihin aliohjelmaan siirrytään kun 
+            fysiikkarakenne <code>obj</code> törmää toiseen fysiikarakenteeseen, jolla on tietty tagi <code>tag</code>.
+            </summary>
+            <param name="obj">Törmäävä rakenne.</param>
+            <param name="tag">Törmättävän rakenteen tagi.</param>
             <param name="handler">Metodi, joka käsittelee törmäyksen (ei parametreja).</param>
         </member>
         <member name="M:Jypeli.PhysicsGameBase.RemoveCollisionHandlers(Jypeli.PhysicsObject,Jypeli.PhysicsObject,System.Object,System.Delegate)">
@@ -3674,11 +3615,6 @@
         <member name="E:Jypeli.JypeliWindow.Moved">
             <summary>
             Tapahtuu kun ikkunaa siirretään.
-            </summary>
-        </member>
-        <member name="E:Jypeli.JypeliWindow.Resizing">
-            <summary>
-            Tapahtuu kun ikkunan kokoa ollaan muuttamassa.
             </summary>
         </member>
         <member name="E:Jypeli.JypeliWindow.Resized">
@@ -4468,14 +4404,14 @@
             Palauttaa kulman radiaaneina siten, että se on aina positiivinen.
             Hyödyllinen esimerkiksi ympyrän kaarien käsittelyssä.
             </summary>
-            <returns>[0,2pi[</returns>
+            <returns>]0,2pi]</returns>
         </member>
         <member name="M:Jypeli.Angle.GetPositiveDegrees">
             <summary>
             Palauttaa kulman asteina siten, että se on aina positiivinen.
             Hyödyllinen esimerkiksi ympyrän kaarien käsittelyssä.
             </summary>
-            <returns>[0,360[</returns>
+            <returns>]0,360]</returns>
         </member>
         <member name="M:Jypeli.Angle.ArcSin(System.Double)">
             <summary>
@@ -5761,13 +5697,6 @@
             <param name="c">Alkuperäinen väri.</param>
             <param name="howMuch">Kuinka paljon vaaleampi.</param>
             <returns>Vaaleampi väri.</returns>
-        </member>
-        <member name="M:Jypeli.Color.Mix(Jypeli.Color[])">
-            <summary>
-            Sekoittaa kahta tai useampaa väriä.
-            </summary>
-            <param name="colors">Värit parametreina.</param>
-            <returns>Sekoitettu väri</returns>
         </member>
         <member name="F:Jypeli.Color.AshGray">
             <summary>
@@ -11124,23 +11053,6 @@
             Polku, eli lista pisteistä joita aivot seuraa.
             </summary>
         </member>
-        <member name="P:Jypeli.Assets.PathFollowerBrain.NextWaypointIndex">
-            <summary>
-            Seuraavan pisteen indeksi.
-            </summary>
-        </member>
-        <member name="P:Jypeli.Assets.PathFollowerBrain.NextWaypoint">
-            <summary>
-            Seuraavan pisteen paikka.
-            </summary>
-        </member>
-        <member name="P:Jypeli.Assets.PathFollowerBrain.Step">
-            <summary>
-            Askel (listassa).
-            Seuraavan pisteen indeksi = tämän pisteen indeksi + askel.
-            Voi olla myös negatiivinen (mennään reittiä toiseen suuntaan).
-            </summary>
-        </member>
         <member name="P:Jypeli.Assets.PathFollowerBrain.WaypointRadius">
             <summary>
             Etäisyys, jonka sisällä ollaan perillä pisteessä.
@@ -11159,11 +11071,6 @@
         <member name="P:Jypeli.Assets.PathFollowerBrain.ReverseReturn">
             <summary>
             Palataanko samaa reittiä takaisin.
-            </summary>
-        </member>
-        <member name="E:Jypeli.Assets.PathFollowerBrain.ArrivedAtWaypoint">
-            <summary>
-            Tapahtuu, kun saavutetaan reitin piste.
             </summary>
         </member>
         <member name="E:Jypeli.Assets.PathFollowerBrain.ArrivedAtEnd">
@@ -15201,18 +15108,6 @@
             Palauttaa satunnaisen värin.
             </summary>
             <returns>Satunnainen väri</returns>
-        </member>
-        <member name="M:Jypeli.RandomGen.NextLightColor">
-            <summary>
-            Palauttaa satunnaisen vaalean värin.
-            </summary>
-            <returns>Satunnainen vaalea väri</returns>
-        </member>
-        <member name="M:Jypeli.RandomGen.NextDarkColor">
-            <summary>
-            Palauttaa satunnaisen tumman värin.
-            </summary>
-            <returns>Satunnainen tumma väri</returns>
         </member>
         <member name="M:Jypeli.RandomGen.NextColor(Jypeli.Color,Jypeli.Color)">
             <summary>

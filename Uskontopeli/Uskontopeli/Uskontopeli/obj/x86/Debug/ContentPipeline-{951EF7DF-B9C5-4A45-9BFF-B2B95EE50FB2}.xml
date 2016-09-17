@@ -7,8 +7,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\PappiAnimA1.xnb</Output>
-      <Time>2016-09-01T18:09:26.9750998+03:00</Time>
+      <Output>C:\MyTemp\JaakkoS\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\PappiAnimA1.xnb</Output>
+      <Time>2016-09-01T11:15:28+03:00</Time>
     </Item>
     <Item>
       <Source>PappiAnimA2.png</Source>
@@ -16,8 +16,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\PappiAnimA2.xnb</Output>
-      <Time>2016-09-01T18:09:26.9796012+03:00</Time>
+      <Output>C:\MyTemp\JaakkoS\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\PappiAnimA2.xnb</Output>
+      <Time>2016-09-01T11:15:28+03:00</Time>
     </Item>
     <Item>
       <Source>PappiAnimA3.png</Source>
@@ -25,71 +25,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\PappiAnimA3.xnb</Output>
-      <Time>2016-09-01T18:09:26.9856018+03:00</Time>
-    </Item>
-    <Item>
-      <Source>PappiAnimO1.png</Source>
-      <Name>PappiAnimO1</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\PappiAnimO1.xnb</Output>
-      <Time>2016-09-01T18:09:27.1211254+03:00</Time>
-    </Item>
-    <Item>
-      <Source>PappiAnimO3.png</Source>
-      <Name>PappiAnimO3</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\PappiAnimO3.xnb</Output>
-      <Time>2016-09-01T18:09:27.1816319+03:00</Time>
-    </Item>
-    <Item>
-      <Source>PappiAnimV1.png</Source>
-      <Name>PappiAnimV1</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\PappiAnimV1.xnb</Output>
-      <Time>2016-09-01T18:09:27.2396398+03:00</Time>
-    </Item>
-    <Item>
-      <Source>PappiAnimV2.png</Source>
-      <Name>PappiAnimV2</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\PappiAnimV2.xnb</Output>
-      <Time>2016-09-01T18:09:27.2921466+03:00</Time>
-    </Item>
-    <Item>
-      <Source>PappiAnimV3.png</Source>
-      <Name>PappiAnimV3</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\PappiAnimV3.xnb</Output>
-      <Time>2016-09-01T18:09:27.3136489+03:00</Time>
-    </Item>
-    <Item>
-      <Source>PappiAnimY1.png</Source>
-      <Name>PappiAnimY1</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\PappiAnimY1.xnb</Output>
-      <Time>2016-09-01T18:09:27.3356514+03:00</Time>
-    </Item>
-    <Item>
-      <Source>PappiAnimY2.png</Source>
-      <Name>PappiAnimY2</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\PappiAnimY2.xnb</Output>
-      <Time>2016-09-01T18:09:27.3696552+03:00</Time>
+      <Output>C:\MyTemp\JaakkoS\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\PappiAnimA3.xnb</Output>
+      <Time>2016-09-01T11:15:28+03:00</Time>
     </Item>
     <Item>
       <Source>PappiAnimO2.png</Source>
@@ -97,8 +34,71 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\PappiAnimO2.xnb</Output>
-      <Time>2016-09-01T18:09:27.1261249+03:00</Time>
+      <Output>C:\MyTemp\JaakkoS\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\PappiAnimO2.xnb</Output>
+      <Time>2016-09-02T08:03:32+03:00</Time>
+    </Item>
+    <Item>
+      <Source>PappiAnimO1.png</Source>
+      <Name>PappiAnimO1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\MyTemp\JaakkoS\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\PappiAnimO1.xnb</Output>
+      <Time>2016-09-02T08:03:32+03:00</Time>
+    </Item>
+    <Item>
+      <Source>PappiAnimO3.png</Source>
+      <Name>PappiAnimO3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\MyTemp\JaakkoS\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\PappiAnimO3.xnb</Output>
+      <Time>2016-09-02T08:03:32+03:00</Time>
+    </Item>
+    <Item>
+      <Source>PappiAnimV1.png</Source>
+      <Name>PappiAnimV1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\MyTemp\JaakkoS\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\PappiAnimV1.xnb</Output>
+      <Time>2016-09-02T08:03:32+03:00</Time>
+    </Item>
+    <Item>
+      <Source>PappiAnimV2.png</Source>
+      <Name>PappiAnimV2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\MyTemp\JaakkoS\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\PappiAnimV2.xnb</Output>
+      <Time>2016-09-02T08:03:32+03:00</Time>
+    </Item>
+    <Item>
+      <Source>PappiAnimV3.png</Source>
+      <Name>PappiAnimV3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\MyTemp\JaakkoS\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\PappiAnimV3.xnb</Output>
+      <Time>2016-09-02T08:03:32+03:00</Time>
+    </Item>
+    <Item>
+      <Source>PappiAnimY1.png</Source>
+      <Name>PappiAnimY1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\MyTemp\JaakkoS\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\PappiAnimY1.xnb</Output>
+      <Time>2016-09-02T08:03:32+03:00</Time>
+    </Item>
+    <Item>
+      <Source>PappiAnimY2.png</Source>
+      <Name>PappiAnimY2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\MyTemp\JaakkoS\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\PappiAnimY2.xnb</Output>
+      <Time>2016-09-02T08:03:32+03:00</Time>
     </Item>
     <Item>
       <Source>Pappi2.png</Source>
@@ -106,8 +106,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\Pappi2.xnb</Output>
-      <Time>2016-09-01T19:57:30.6026868+03:00</Time>
+      <Output>C:\MyTemp\JaakkoS\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\Pappi2.xnb</Output>
+      <Time>2016-09-02T08:03:32+03:00</Time>
     </Item>
     <Item>
       <Source>Projectile1.png</Source>
@@ -115,8 +115,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\Projectile1.xnb</Output>
-      <Time>2016-09-03T19:22:45.1200296+03:00</Time>
+      <Output>C:\MyTemp\JaakkoS\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\Projectile1.xnb</Output>
+      <Time>2016-09-04T14:28:54+03:00</Time>
     </Item>
     <Item>
       <Source>RItariAnim1.png</Source>
@@ -124,8 +124,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\RItariAnim1.xnb</Output>
-      <Time>2016-09-07T18:59:10.267227+03:00</Time>
+      <Output>C:\MyTemp\JaakkoS\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\RItariAnim1.xnb</Output>
+      <Time>2016-09-08T09:52:02+03:00</Time>
     </Item>
     <Item>
       <Source>RItariAnim2.png</Source>
@@ -133,8 +133,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\RItariAnim2.xnb</Output>
-      <Time>2016-09-07T18:59:10.2757281+03:00</Time>
+      <Output>C:\MyTemp\JaakkoS\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\RItariAnim2.xnb</Output>
+      <Time>2016-09-08T09:52:02+03:00</Time>
     </Item>
     <Item>
       <Source>Kartta1.png</Source>
@@ -142,8 +142,62 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\Kartta1.xnb</Output>
-      <Time>2016-09-16T19:05:28.9732927+03:00</Time>
+      <Output>C:\MyTemp\JaakkoS\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\Kartta1.xnb</Output>
+      <Time>2016-09-17T12:00:14.2206669+03:00</Time>
+    </Item>
+    <Item>
+      <Source>Viholline2.png</Source>
+      <Name>Viholline2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\MyTemp\JaakkoS\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\Viholline2.xnb</Output>
+      <Time>2016-09-17T10:46:00.2981988+03:00</Time>
+    </Item>
+    <Item>
+      <Source>Vihollinen1.png</Source>
+      <Name>Vihollinen1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\MyTemp\JaakkoS\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\Vihollinen1.xnb</Output>
+      <Time>2016-09-17T10:46:00.2981988+03:00</Time>
+    </Item>
+    <Item>
+      <Source>mapui2.png</Source>
+      <Name>mapui2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\MyTemp\JaakkoS\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\mapui2.xnb</Output>
+      <Time>2016-09-17T13:03:04.8988963+03:00</Time>
+    </Item>
+    <Item>
+      <Source>Kartta3.png</Source>
+      <Name>Kartta3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\MyTemp\JaakkoS\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\Kartta3.xnb</Output>
+      <Time>2016-09-17T13:15:00.517451+03:00</Time>
+    </Item>
+    <Item>
+      <Source>Kartta4.png</Source>
+      <Name>Kartta4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\MyTemp\JaakkoS\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\Kartta4.xnb</Output>
+      <Time>2016-09-17T13:37:12.5416401+03:00</Time>
+    </Item>
+    <Item>
+      <Source>Fakta1.png</Source>
+      <Name>Fakta1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\MyTemp\JaakkoS\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\Fakta1.xnb</Output>
+      <Time>2016-09-17T13:50:30.4934273+03:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -152,15 +206,15 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\UskontopeliContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\MyTemp\JaakkoS\U2-projekti\Uskontopeli\Uskontopeli\UskontopeliContent\</RootDirectory>
+      <LoggerRootDirectory>C:\MyTemp\JaakkoS\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\MyTemp\JaakkoS\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\MyTemp\JaakkoS\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
         <Key>C:\Program Files (x86)\Jypeli\lib\ContentExtensions\TextFileContentExtension.dll</Key>
-        <Value>2016-03-29T10:06:40+03:00</Value>
+        <Value>2015-02-09T20:18:44+02:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
@@ -188,11 +242,11 @@
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Jypeli\lib\ContentExtensions\AnimationExtension.dll</Key>
-        <Value>2016-03-29T10:06:38+03:00</Value>
+        <Value>2015-02-17T22:27:18+02:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\WINDOWS\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2016-06-11T17:44:11.8715671+03:00</Value>
+        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2015-09-16T20:00:09.2376023+03:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>
