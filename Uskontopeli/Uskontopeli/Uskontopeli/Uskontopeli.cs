@@ -15,6 +15,8 @@ public class Uskontopeli : PhysicsGame
     PhysicsObject Goal;
     PhysicsObject Fact1;
 
+    GameObject fakta;
+
     AssaultRifle playerWeapon1;
 
     private Image[] playerWalkDown = LoadImages("PappiAnimA1", "PappiAnimA2", "PappiAnimA1","PappiAnimA3");
@@ -30,11 +32,13 @@ public class Uskontopeli : PhysicsGame
 
     int KenttaNumero = 1;
     int FactNro = 0;
+
     public override void Begin()
     {
         NextLevel();
         
     }
+
     void NextLevel()
     {
         ClearAll();
@@ -45,6 +49,7 @@ public class Uskontopeli : PhysicsGame
         else if (KenttaNumero == 4) Luokentta("Kartta4");
         else if (KenttaNumero == 5) Exit();
     }
+
     void Luokentta(string KenttanNimi)
     {
 
@@ -67,8 +72,6 @@ public class Uskontopeli : PhysicsGame
 
     }
     
-   
-
     void AddWall(Vector paikka, double korkeus, double leveys)
     {
         PhysicsObject Wall = new PhysicsObject(100, 100);
@@ -196,6 +199,20 @@ public class Uskontopeli : PhysicsGame
             Pause();
             PauseMenu();
         },null);
+
+        Keyboard.Listen(Key.Space, ButtonState.Pressed, delegate
+        {
+            if (fakta == null)
+            {
+                return;
+            }
+            else
+            {
+                fakta.Destroy();
+                FactMenu();
+            }
+        }
+, null);
     }
 
     void AddGoal(Vector paikka, double korkeus, double leveys)
@@ -342,7 +359,7 @@ public class Uskontopeli : PhysicsGame
         ,null);
     }
     
-       void PauseMenu()
+    void PauseMenu()
     {
 
         MultiSelectWindow PauseValikko = new MultiSelectWindow("Peli on pysäytty", "Jatka peliä", "Kerätyt faktat", "Päävalikko");
@@ -359,7 +376,9 @@ public class Uskontopeli : PhysicsGame
             MultiSelectWindow FaktaMenu = new MultiSelectWindow("Et ole löytänyt yhtään faktaa vielä", "Jatka peliä");
             FaktaMenu.AddItemHandler(0, delegate
             {
-                Pause();
+                FaktaMenu.Destroy();
+                Pause
+                ();
             }
             );
             Add(FaktaMenu);
@@ -369,10 +388,15 @@ public class Uskontopeli : PhysicsGame
             MultiSelectWindow FaktaMenu = new MultiSelectWindow("Kerätyt faktat", "fakta 1", "takaisin");
             FaktaMenu.AddItemHandler(0, delegate
             {
+                FaktaMenu.Destroy();
                 ShowAFact2(Fact1Image);
             }
             );
-            FaktaMenu.AddItemHandler(1, PauseMenu);
+            FaktaMenu.AddItemHandler(1, delegate
+            {
+                PauseMenu();
+                FaktaMenu.Destroy();
+            });
             Add(FaktaMenu);
         }
 
@@ -381,31 +405,31 @@ public class Uskontopeli : PhysicsGame
         MultiSelectWindow FaktaMenu = new MultiSelectWindow("Kerätyt faktat", "fakta 1", "fakta 2", "takaisin");
             FaktaMenu.AddItemHandler(0, delegate
             {
+                FaktaMenu.Destroy();
                 ShowAFact2(Fact1Image);
             }
             );
             FaktaMenu.AddItemHandler(1, delegate
             {
+                FaktaMenu.Destroy();
                 ShowAFact2(Pappikuva);
             });
-            FaktaMenu.AddItemHandler(2, Pause);
+            FaktaMenu.AddItemHandler(2, delegate
+            {
+                PauseMenu();
+                FaktaMenu.Destroy();
+            }
+            );
             Add(FaktaMenu);
         }
     }
 
     void ShowAFact2 (Image Kuva)
     {
-        GameObject fakta = new GameObject(300, 500);
+        fakta = new GameObject(300, 500);
         fakta.Position = player.Position;
         fakta.Image = Kuva;
         Add(fakta);
-
-        Keyboard.Listen(Key.Enter, ButtonState.Pressed, delegate
-        {
-            fakta.Destroy();
-            FactMenu();
-        }
-, null);
     }
 
 }
