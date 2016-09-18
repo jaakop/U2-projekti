@@ -33,10 +33,12 @@ public class Uskontopeli : PhysicsGame
     int KenttaNumero = 1;
     int FactNro = 0;
 
+    DoubleMeter PlayerLife;
+
     public override void Begin()
     {
+        ClearAll();
         NextLevel();
-        
     }
 
     void NextLevel()
@@ -55,12 +57,12 @@ public class Uskontopeli : PhysicsGame
 
 
         ColorTileMap kentta = ColorTileMap.FromLevelAsset(KenttanNimi);
-        kentta.SetTileMethod("#FFFF00B2", Addplayer);
         kentta.SetTileMethod("#FF000000", AddWall);
-        kentta.SetTileMethod("#FF0015FF", CreateEnemy1);
         kentta.SetTileMethod("#FFFF000C", AddGoal);
         kentta.SetTileMethod("#FFFAFF07", AddFact1);
         kentta.SetTileMethod("#FFFAFF08", AddAbility1);
+        kentta.SetTileMethod("#FF0015FF", CreateEnemy1);
+        kentta.SetTileMethod("#FFFF00B2", Addplayer);
 
         kentta.Execute(100, 100);
 
@@ -91,6 +93,7 @@ public class Uskontopeli : PhysicsGame
         player.Position = paikka;
         player.CanRotate = false;
         player.MaxVelocity = 300;
+        player.IgnoresExplosions = true;
         player.Tag = "Pelaaja";
         Add(player);
 
@@ -102,7 +105,25 @@ public class Uskontopeli : PhysicsGame
         playerWeapon1.AttackSound = null;
         player.Add(playerWeapon1);
 
+
+        PlayerLife = new DoubleMeter(100);
+        PlayerLife.MaxValue = 100;
+        BarGauge PlayerLifeBar = new BarGauge(20, Screen.Width / 3);
+        PlayerLifeBar.X = Screen.Left + Screen.Width / 2;
+        PlayerLifeBar.Y = Screen.Top - 40;
+        PlayerLifeBar.Angle = Angle.FromDegrees(90);
+        PlayerLifeBar.BindTo(PlayerLife);
+        PlayerLifeBar.Color = Color.Red;
+        PlayerLifeBar.BarColor = Color.Green;
+        Add(PlayerLifeBar);
+
+        if (PlayerLife == 0)
+        {
+            Dead();
+        }
+
         IdlePlayer();
+
     }
 
     void AddControlls()
@@ -193,6 +214,17 @@ public class Uskontopeli : PhysicsGame
             FactNro++;
         }, "Löydä fakta");
 
+        Keyboard.Listen(Key.F3, ButtonState.Pressed, delegate
+        {
+            PlayerLife.Value -= 10;
+
+            if (PlayerLife == 0)
+            {
+                Dead();
+            }
+        }, "Vähennä elämää");
+
+
         PhoneBackButton.Listen(ConfirmExit, "Lopeta peli");
         Keyboard.Listen(Key.Escape, ButtonState.Pressed,delegate
         {
@@ -239,9 +271,29 @@ public class Uskontopeli : PhysicsGame
         player.Animation.Start();
     }
 
+    void EnemyHit(PhysicsObject tormaaja, PhysicsObject target)
+    {
+        PlayerLife.Value -= 10;
+        Explosion rajahdys = new Explosion(100);
+        rajahdys.Position = player.Position;
+        rajahdys.Sound = null;
+        rajahdys.IsVisible = false;
+        rajahdys.ShockwaveColor = Color.Transparent;
+        rajahdys.Speed = 500;
+        rajahdys.Force = 100;
+
+        Add(rajahdys);
+
+        if (PlayerLife == 0)
+        {
+            Dead();
+        }
+    }
+
     void Hit(PhysicsObject ammus, PhysicsObject target)
     {
-        ammus.Destroy();
+            ammus.Destroy();
+
         if (target.Tag == "Vihu")
         {
             target.Destroy();
@@ -257,6 +309,7 @@ public class Uskontopeli : PhysicsGame
             ammus.Size *= 3;
             ammus.Image = projectile1;
             ammus.MaximumLifetime = TimeSpan.FromSeconds(2.0);
+            ammus.Tag = "Projektile";
             
         }
 
@@ -270,6 +323,18 @@ public class Uskontopeli : PhysicsGame
     
     }
 
+    void AddFact1(Vector paikka, double korkeus, double leveys)
+    {
+        Fact1 = new PhysicsObject(100, 100);
+        Fact1.Color = Color.Yellow;
+        Fact1.Position = paikka;
+        Fact1.IgnoresPhysicsLogics = true;
+        Enemy1.IgnoresCollisionWith(Enemy1);
+        Fact1.MakeStatic();
+        Add(Fact1);
+
+        AddCollisionHandler(player, Fact1, ShowAFact);
+    }
     void CreateEnemy1 (Vector paikka, double korkeus, double leveys)
     {
         Enemy1 = new PhysicsObject(75, 100);
@@ -278,10 +343,10 @@ public class Uskontopeli : PhysicsGame
         Enemy1.Position = paikka;
         Enemy1.CanRotate = false;
         Enemy1.Tag = "Vihu";
-        Enemy1.CollisionIgnoreGroup = 1;
         Enemy1.Animation = new Animation(Enemy1Idle);
         Enemy1.Animation.FPS = 2;
         Enemy1.Animation.Start();
+        Enemy1.Restitution = 1;
         Add(Enemy1);
         
 
@@ -291,6 +356,8 @@ public class Uskontopeli : PhysicsGame
         Enemy1.Brain = Enemy1brain;
         Enemy1brain.Active = true;
 
+        
+        AddCollisionHandler(Enemy1, player, EnemyHit);
     }
 
     void SeuraavaKentta(PhysicsObject tormaaja, PhysicsObject kohde)
@@ -310,18 +377,6 @@ public class Uskontopeli : PhysicsGame
 
     }
     
-    void AddFact1(Vector paikka, double korkeus, double leveys)
-    {
-        Fact1 = new PhysicsObject(100, 100);
-        Fact1.Color = Color.Yellow;
-        Fact1.Position = paikka;
-        Fact1.IgnoresPhysicsLogics = true;
-        Fact1.CollisionIgnoreGroup = 1;
-        Fact1.MakeStatic();
-        Add(Fact1);
-
-        AddCollisionHandler(player, Fact1, ShowAFact);
-    }
 
     void AddAbility1(Vector paikka, double korkeus, double leveys)
     {
@@ -359,7 +414,7 @@ public class Uskontopeli : PhysicsGame
         ,null);
     }
     
-    void PauseMenu()
+     void PauseMenu()
     {
 
         MultiSelectWindow PauseValikko = new MultiSelectWindow("Peli on pysäytty", "Jatka peliä", "Kerätyt faktat", "Päävalikko");
@@ -431,5 +486,11 @@ public class Uskontopeli : PhysicsGame
         fakta.Image = Kuva;
         Add(fakta);
     }
-
+    void Dead()
+    {
+        player.Destroy();
+        MessageDisplay.Add("Kuolit");
+        Timer.SingleShot(5, Begin);
+    }
 }
+
