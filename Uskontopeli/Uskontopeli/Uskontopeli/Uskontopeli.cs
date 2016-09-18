@@ -39,7 +39,8 @@ public class Uskontopeli : PhysicsGame
     {
         ClearAll();
         NextLevel();
-    }
+
+}
 
     void NextLevel()
     {
@@ -50,6 +51,7 @@ public class Uskontopeli : PhysicsGame
         else if (KenttaNumero == 3) Luokentta("Kartta3");
         else if (KenttaNumero == 4) Luokentta("Kartta4");
         else if (KenttaNumero == 5) Exit();
+
     }
 
     void Luokentta(string KenttanNimi)
@@ -335,6 +337,7 @@ public class Uskontopeli : PhysicsGame
 
         AddCollisionHandler(player, Fact1, ShowAFact);
     }
+
     void CreateEnemy1 (Vector paikka, double korkeus, double leveys)
     {
         Enemy1 = new PhysicsObject(75, 100);
@@ -376,7 +379,6 @@ public class Uskontopeli : PhysicsGame
         NextLevelTimer.Start(1);
 
     }
-    
 
     void AddAbility1(Vector paikka, double korkeus, double leveys)
     {
@@ -486,6 +488,7 @@ public class Uskontopeli : PhysicsGame
         fakta.Image = Kuva;
         Add(fakta);
     }
+
     void Dead()
     {
         player.Destroy();
