@@ -29,6 +29,7 @@ public class Uskontopeli : PhysicsGame
     Image Fact1Image = LoadImage("Fakta1");
 
     int KenttaNumero = 1;
+    int FactNro = 0;
     public override void Begin()
     {
         NextLevel();
@@ -184,8 +185,17 @@ public class Uskontopeli : PhysicsGame
             NextLevel();
         }, "Skippaa taso");
 
+        Keyboard.Listen(Key.F2, ButtonState.Pressed, delegate
+        {
+            FactNro++;
+        }, "Löydä fakta");
+
         PhoneBackButton.Listen(ConfirmExit, "Lopeta peli");
-        Keyboard.Listen(Key.Escape, ButtonState.Pressed, ConfirmExit, "Lopeta peli");
+        Keyboard.Listen(Key.Escape, ButtonState.Pressed,delegate
+        {
+            Pause();
+            PauseMenu();
+        },null);
     }
 
     void AddGoal(Vector paikka, double korkeus, double leveys)
@@ -307,10 +317,21 @@ public class Uskontopeli : PhysicsGame
 
     void ShowAFact(PhysicsObject tormaaja, PhysicsObject kohde)
     {
+        FactNro++;
+
         GameObject fakta = new GameObject(300, 500);
-        fakta.Image = Fact1Image;
         fakta.Position = player.Position;
         Add(fakta);
+
+        if (FactNro == 1)
+        {
+            fakta.Image = Fact1Image;
+        }
+
+        else if (FactNro == 2)
+        {
+            fakta.Image = Pappikuva;
+        }
 
         kohde.Destroy();
 
@@ -324,6 +345,67 @@ public class Uskontopeli : PhysicsGame
        void PauseMenu()
     {
 
+        MultiSelectWindow PauseValikko = new MultiSelectWindow("Peli on pysäytty", "Jatka peliä", "Kerätyt faktat", "Päävalikko");
+        PauseValikko.AddItemHandler(0, Pause);
+        PauseValikko.AddItemHandler(1, FactMenu);
+        PauseValikko.AddItemHandler(2, Exit);
+        Add(PauseValikko);
+    }
+
+    void FactMenu()
+    {
+        if (FactNro == 0)
+        {
+            MultiSelectWindow FaktaMenu = new MultiSelectWindow("Et ole löytänyt yhtään faktaa vielä", "Jatka peliä");
+            FaktaMenu.AddItemHandler(0, delegate
+            {
+                Pause();
+            }
+            );
+            Add(FaktaMenu);
+        }
+       else if (FactNro == 1)
+        {
+            MultiSelectWindow FaktaMenu = new MultiSelectWindow("Kerätyt faktat", "fakta 1", "takaisin");
+            FaktaMenu.AddItemHandler(0, delegate
+            {
+                ShowAFact2(Fact1Image);
+            }
+            );
+            FaktaMenu.AddItemHandler(1, PauseMenu);
+            Add(FaktaMenu);
+        }
+
+       else if (FactNro == 2)
+        { 
+        MultiSelectWindow FaktaMenu = new MultiSelectWindow("Kerätyt faktat", "fakta 1", "fakta 2", "takaisin");
+            FaktaMenu.AddItemHandler(0, delegate
+            {
+                ShowAFact2(Fact1Image);
+            }
+            );
+            FaktaMenu.AddItemHandler(1, delegate
+            {
+                ShowAFact2(Pappikuva);
+            });
+            FaktaMenu.AddItemHandler(2, Pause);
+            Add(FaktaMenu);
+        }
+    }
+
+    void ShowAFact2 (Image Kuva)
+    {
+        GameObject fakta = new GameObject(300, 500);
+        fakta.Position = player.Position;
+        fakta.Image = Kuva;
+        Add(fakta);
+
+        Keyboard.Listen(Key.Enter, ButtonState.Pressed, delegate
+        {
+            fakta.Destroy();
+            FactMenu();
+        }
+, null);
     }
 
 }
