@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<State>
+  <Object Name="CameraProperty" TypeAssembly="Jypeli, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null" Type="Camera">
+    <Property Name="FollowOffset" Type="Jypeli.Vector, Jypeli, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <Field Name="X" Type="System.Double, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+        <Value>0</Value>
+      </Field>
+      <Field Name="Y" Type="System.Double, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+        <Value>0</Value>
+      </Field>
+    </Property>
+    <Field Name="_stayInLevel" Type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <Value>False</Value>
+    </Field>
+    <Field Name="_zoomFactor" Type="System.Double, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <Value>2</Value>
+    </Field>
+    <Field Name="Position" Type="Jypeli.Vector, Jypeli, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <Field Name="X" Type="System.Double, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+        <Value>1766.83059792774</Value>
+      </Field>
+      <Field Name="Y" Type="System.Double, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+        <Value>1100.00000031045</Value>
+      </Field>
+    </Field>
+    <Field Name="Velocity" Type="Jypeli.Vector, Jypeli, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <Field Name="X" Type="System.Double, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+        <Value>0</Value>
+      </Field>
+      <Field Name="Y" Type="System.Double, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+        <Value>0</Value>
+      </Field>
+    </Field>
+  </Object>
+  <Object Name="KenttaNumeroField" TypeAssembly="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" Type="Int32">
+    <Value>1</Value>
+  </Object>
+  <Object Name="FactNroField" TypeAssembly="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" Type="Int32">
+    <Value>2</Value>
+  </Object>
+  <Object Name="PlayerLifeField" TypeAssembly="Jypeli, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null" Type="DoubleMeter">
+    <Property Name="Value" Type="System.Double, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <Value>80</Value>
+    </Property>
+  </Object>
+</State>

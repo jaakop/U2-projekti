@@ -143,7 +143,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\Kartta1.xnb</Output>
-      <Time>2016-09-18T13:26:34.9753797+03:00</Time>
+      <Time>2016-09-18T19:41:11.066458+03:00</Time>
     </Item>
     <Item>
       <Source>Viholline2.png</Source>
@@ -198,6 +198,15 @@
       <Options>None</Options>
       <Output>C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\Fakta1.xnb</Output>
       <Time>2016-09-17T19:33:22.5315985+03:00</Time>
+    </Item>
+    <Item>
+      <Source>tilanne.xml</Source>
+      <Name>tilanne</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\tilanne.xnb</Output>
+      <Time>2016-09-19T18:38:38.3876465+03:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

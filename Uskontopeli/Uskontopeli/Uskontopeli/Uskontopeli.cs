@@ -8,11 +8,10 @@ using Jypeli.Widgets;
 
 public class Uskontopeli : PhysicsGame
 {
-
     PhysicsObject player;
-    PhysicsObject Enemy1;
-    PhysicsObject ammus;
     PhysicsObject Goal;
+    PhysicsObject ammus;
+    PhysicsObject Enemy1;
     PhysicsObject Fact1;
 
     GameObject fakta;
@@ -30,28 +29,56 @@ public class Uskontopeli : PhysicsGame
     Image Pappikuva = LoadImage("PappiAnimA1");
     Image Fact1Image = LoadImage("Fakta1");
 
-    int KenttaNumero = 1;
-    int FactNro = 0;
+    [Save] public int KenttaNumero = 1;
+    [Save] public int FactNro = 0;
 
     DoubleMeter PlayerLife;
 
     public override void Begin()
     {
         ClearAll();
-        NextLevel();
+        Level.Background.Color = Color.Black;
+        MainMenu();
+    }
 
-}
+    void MainMenu()
+    {
+        MultiSelectWindow mainMenu = new MultiSelectWindow("Tervetuloa", "Pelaa", "Poistu pelistä" );
+        mainMenu.AddItemHandler(0, NewGame);
+        mainMenu.AddItemHandler(1, Exit);
+
+        Add(mainMenu);
+    }
+
+    void StartGame()
+    {
+        if (DataStorage.Exists("tilanne"))
+        {
+
+            LoadGame("tilanne");
+            NextLevel();
+            MessageDisplay.Add("Jatka peliä painamalla 'P'");
+        }
+        else
+        {
+            NewGame();
+        }
+    }
+
+    void NewGame()
+    {
+        NextLevel();
+    }
 
     void NextLevel()
     {
         ClearAll();
-
+        
         if (KenttaNumero == 1) Luokentta("Kartta1");
         else if (KenttaNumero == 2) Luokentta("mapui2");
         else if (KenttaNumero == 3) Luokentta("Kartta3");
         else if (KenttaNumero == 4) Luokentta("Kartta4");
         else if (KenttaNumero == 5) Exit();
-
     }
 
     void Luokentta(string KenttanNimi)
@@ -67,7 +94,6 @@ public class Uskontopeli : PhysicsGame
         kentta.SetTileMethod("#FFFF00B2", Addplayer);
 
         kentta.Execute(100, 100);
-
         Camera.Follow(player);
         AddControlls();
         IsFullScreen = false;
@@ -247,6 +273,9 @@ public class Uskontopeli : PhysicsGame
             }
         }
 , null);
+
+        Keyboard.Listen(Key.P, ButtonState.Pressed, Pause, null);
+
     }
 
     void AddGoal(Vector paikka, double korkeus, double leveys)
@@ -365,6 +394,8 @@ public class Uskontopeli : PhysicsGame
 
     void SeuraavaKentta(PhysicsObject tormaaja, PhysicsObject kohde)
     {
+
+        SaveGame("tilanne.xml");
         KenttaNumero++;
         ClearAll();
         Level.Background.Color = Color.Black;
@@ -422,7 +453,7 @@ public class Uskontopeli : PhysicsGame
         MultiSelectWindow PauseValikko = new MultiSelectWindow("Peli on pysäytty", "Jatka peliä", "Kerätyt faktat", "Päävalikko");
         PauseValikko.AddItemHandler(0, Pause);
         PauseValikko.AddItemHandler(1, FactMenu);
-        PauseValikko.AddItemHandler(2, Exit);
+        PauseValikko.AddItemHandler(2, Begin);
         Add(PauseValikko);
     }
 
@@ -493,7 +524,7 @@ public class Uskontopeli : PhysicsGame
     {
         player.Destroy();
         MessageDisplay.Add("Kuolit");
-        Timer.SingleShot(5, Begin);
+        Timer.SingleShot(5, NextLevel);
     }
 }
 
