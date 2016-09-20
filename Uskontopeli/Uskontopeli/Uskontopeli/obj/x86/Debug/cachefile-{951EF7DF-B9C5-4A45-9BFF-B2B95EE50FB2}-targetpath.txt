@@ -20,4 +20,5 @@ Content\mapui2.xnb
 Content\Kartta3.xnb
 Content\Kartta4.xnb
 Content\Fakta1.xnb
+Content\tilanne.xnb
 Content\Kartta1.png

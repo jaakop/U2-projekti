@@ -8,12 +8,12 @@ using Jypeli.Widgets;
 
 public class Uskontopeli : PhysicsGame
 {
-
     PhysicsObject player;
-    PhysicsObject Enemy1;
-    PhysicsObject ammus;
     PhysicsObject Goal;
+    PhysicsObject ammus;
+    PhysicsObject Enemy1;
     PhysicsObject Fact1;
+    PhysicsObject health;
 
     GameObject fakta;
 
@@ -30,20 +30,66 @@ public class Uskontopeli : PhysicsGame
     Image Pappikuva = LoadImage("PappiAnimA1");
     Image Fact1Image = LoadImage("Fakta1");
 
-    int KenttaNumero = 1;
-    int FactNro = 0;
+    [Save] public int KenttaNumero = 1;
+    [Save] public int FactNro = 0;
 
-    DoubleMeter PlayerLife;
+    [Save] public DoubleMeter PlayerLife;
+    int healthvalue = 100;
 
     public override void Begin()
     {
         ClearAll();
+        Level.Background.Color = Color.Black;
+        MainMenu();
+    }
+
+    void MainMenu()
+    {
+        MultiSelectWindow mainMenu = new MultiSelectWindow("Tervetuloa", "Pelaa", "Poistu pelistä" );
+        mainMenu.AddItemHandler(0, NewGame);
+        mainMenu.AddItemHandler(1, Exit);
+
+        Add(mainMenu);
+    }
+
+    void StartGame()
+    {
+        if (DataStorage.Exists("tilanne"))
+        {
+
+            LoadGame("tilanne");
+            NextLevel();
+            MessageDisplay.Add("Jatka peliä painamalla 'P'");
+
+        }
+        else
+        {
+            NewGame();
+        }
+
+    }
+
+    void NewGame()
+    {
         NextLevel();
+
     }
 
     void NextLevel()
     {
         ClearAll();
+
+
+        PlayerLife = new DoubleMeter(100);
+        PlayerLife.MaxValue = 100;
+        BarGauge PlayerLifeBar = new BarGauge(20, Screen.Width / 3);
+        PlayerLifeBar.X = Screen.Left + Screen.Width / 2;
+        PlayerLifeBar.Y = Screen.Top - 40;
+        PlayerLifeBar.Angle = Angle.FromDegrees(90);
+        PlayerLifeBar.BindTo(PlayerLife);
+        PlayerLifeBar.Color = Color.Red;
+        PlayerLifeBar.BarColor = Color.Green;
+        Add(PlayerLifeBar);
 
         if (KenttaNumero == 1) Luokentta("Kartta1");
         else if (KenttaNumero == 2) Luokentta("mapui2");
@@ -55,7 +101,6 @@ public class Uskontopeli : PhysicsGame
     void Luokentta(string KenttanNimi)
     {
 
-
         ColorTileMap kentta = ColorTileMap.FromLevelAsset(KenttanNimi);
         kentta.SetTileMethod("#FF000000", AddWall);
         kentta.SetTileMethod("#FFFF000C", AddGoal);
@@ -63,9 +108,9 @@ public class Uskontopeli : PhysicsGame
         kentta.SetTileMethod("#FFFAFF08", AddAbility1);
         kentta.SetTileMethod("#FF0015FF", CreateEnemy1);
         kentta.SetTileMethod("#FFFF00B2", Addplayer);
+        kentta.SetTileMethod("#FF13FF08", AddHealthBox);
 
         kentta.Execute(100, 100);
-
         Camera.Follow(player);
         AddControlls();
         IsFullScreen = false;
@@ -104,23 +149,6 @@ public class Uskontopeli : PhysicsGame
         playerWeapon1.IsVisible = false;
         playerWeapon1.AttackSound = null;
         player.Add(playerWeapon1);
-
-
-        PlayerLife = new DoubleMeter(100);
-        PlayerLife.MaxValue = 100;
-        BarGauge PlayerLifeBar = new BarGauge(20, Screen.Width / 3);
-        PlayerLifeBar.X = Screen.Left + Screen.Width / 2;
-        PlayerLifeBar.Y = Screen.Top - 40;
-        PlayerLifeBar.Angle = Angle.FromDegrees(90);
-        PlayerLifeBar.BindTo(PlayerLife);
-        PlayerLifeBar.Color = Color.Red;
-        PlayerLifeBar.BarColor = Color.Green;
-        Add(PlayerLifeBar);
-
-        if (PlayerLife == 0)
-        {
-            Dead();
-        }
 
         IdlePlayer();
 
@@ -245,6 +273,9 @@ public class Uskontopeli : PhysicsGame
             }
         }
 , null);
+
+        Keyboard.Listen(Key.P, ButtonState.Pressed, Pause, null);
+
     }
 
     void AddGoal(Vector paikka, double korkeus, double leveys)
@@ -335,6 +366,7 @@ public class Uskontopeli : PhysicsGame
 
         AddCollisionHandler(player, Fact1, ShowAFact);
     }
+
     void CreateEnemy1 (Vector paikka, double korkeus, double leveys)
     {
         Enemy1 = new PhysicsObject(75, 100);
@@ -362,6 +394,8 @@ public class Uskontopeli : PhysicsGame
 
     void SeuraavaKentta(PhysicsObject tormaaja, PhysicsObject kohde)
     {
+
+        SaveGame("tilanne.xml");
         KenttaNumero++;
         ClearAll();
         Level.Background.Color = Color.Black;
@@ -376,7 +410,6 @@ public class Uskontopeli : PhysicsGame
         NextLevelTimer.Start(1);
 
     }
-    
 
     void AddAbility1(Vector paikka, double korkeus, double leveys)
     {
@@ -385,6 +418,18 @@ public class Uskontopeli : PhysicsGame
         PickA1.Position = paikka;
         PickA1.MakeStatic();
         Add(PickA1);
+    }
+
+    void AddHealthBox(Vector paikka, double korkeus, double leveys)
+    {
+        health = new PhysicsObject(100, 100);
+        health.Position = paikka;
+        health.Color = Color.Green;
+        health.MakeStatic();
+        health.IsVisible = true;
+        Add(health);
+
+        AddCollisionHandler(player, health, AddHealth);
     }
 
     void ShowAFact(PhysicsObject tormaaja, PhysicsObject kohde)
@@ -420,7 +465,7 @@ public class Uskontopeli : PhysicsGame
         MultiSelectWindow PauseValikko = new MultiSelectWindow("Peli on pysäytty", "Jatka peliä", "Kerätyt faktat", "Päävalikko");
         PauseValikko.AddItemHandler(0, Pause);
         PauseValikko.AddItemHandler(1, FactMenu);
-        PauseValikko.AddItemHandler(2, Exit);
+        PauseValikko.AddItemHandler(2, Begin);
         Add(PauseValikko);
     }
 
@@ -484,13 +529,29 @@ public class Uskontopeli : PhysicsGame
         fakta = new GameObject(300, 500);
         fakta.Position = player.Position;
         fakta.Image = Kuva;
+        fakta.MaximumLifetime = TimeSpan.FromSeconds(20);
         Add(fakta);
     }
+
+    void AddHealth(PhysicsObject tormaaja, PhysicsObject kohde)
+    {
+        if(PlayerLife <100)
+        {
+            kohde.Destroy();
+            PlayerLife.Value += 20;
+            
+        }
+        else
+        {
+            MessageDisplay.Add("Sinulla on jo täydet elämät!");
+        }
+    }
+
     void Dead()
     {
         player.Destroy();
         MessageDisplay.Add("Kuolit");
-        Timer.SingleShot(5, Begin);
+        Timer.SingleShot(5, NextLevel);
     }
 }
 
