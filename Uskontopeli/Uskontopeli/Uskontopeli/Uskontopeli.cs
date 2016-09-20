@@ -13,6 +13,7 @@ public class Uskontopeli : PhysicsGame
     PhysicsObject ammus;
     PhysicsObject Enemy1;
     PhysicsObject Fact1;
+    PhysicsObject health;
 
     GameObject fakta;
 
@@ -32,7 +33,8 @@ public class Uskontopeli : PhysicsGame
     [Save] public int KenttaNumero = 1;
     [Save] public int FactNro = 0;
 
-    DoubleMeter PlayerLife;
+    [Save] public DoubleMeter PlayerLife;
+    int healthvalue = 100;
 
     public override void Begin()
     {
@@ -58,22 +60,37 @@ public class Uskontopeli : PhysicsGame
             LoadGame("tilanne");
             NextLevel();
             MessageDisplay.Add("Jatka peliä painamalla 'P'");
+
         }
         else
         {
             NewGame();
         }
+
     }
 
     void NewGame()
     {
         NextLevel();
+
     }
 
     void NextLevel()
     {
         ClearAll();
-        
+
+
+        PlayerLife = new DoubleMeter(100);
+        PlayerLife.MaxValue = 100;
+        BarGauge PlayerLifeBar = new BarGauge(20, Screen.Width / 3);
+        PlayerLifeBar.X = Screen.Left + Screen.Width / 2;
+        PlayerLifeBar.Y = Screen.Top - 40;
+        PlayerLifeBar.Angle = Angle.FromDegrees(90);
+        PlayerLifeBar.BindTo(PlayerLife);
+        PlayerLifeBar.Color = Color.Red;
+        PlayerLifeBar.BarColor = Color.Green;
+        Add(PlayerLifeBar);
+
         if (KenttaNumero == 1) Luokentta("Kartta1");
         else if (KenttaNumero == 2) Luokentta("mapui2");
         else if (KenttaNumero == 3) Luokentta("Kartta3");
@@ -84,7 +101,6 @@ public class Uskontopeli : PhysicsGame
     void Luokentta(string KenttanNimi)
     {
 
-
         ColorTileMap kentta = ColorTileMap.FromLevelAsset(KenttanNimi);
         kentta.SetTileMethod("#FF000000", AddWall);
         kentta.SetTileMethod("#FFFF000C", AddGoal);
@@ -92,6 +108,7 @@ public class Uskontopeli : PhysicsGame
         kentta.SetTileMethod("#FFFAFF08", AddAbility1);
         kentta.SetTileMethod("#FF0015FF", CreateEnemy1);
         kentta.SetTileMethod("#FFFF00B2", Addplayer);
+        kentta.SetTileMethod("#FF13FF08", AddHealthBox);
 
         kentta.Execute(100, 100);
         Camera.Follow(player);
@@ -132,23 +149,6 @@ public class Uskontopeli : PhysicsGame
         playerWeapon1.IsVisible = false;
         playerWeapon1.AttackSound = null;
         player.Add(playerWeapon1);
-
-
-        PlayerLife = new DoubleMeter(100);
-        PlayerLife.MaxValue = 100;
-        BarGauge PlayerLifeBar = new BarGauge(20, Screen.Width / 3);
-        PlayerLifeBar.X = Screen.Left + Screen.Width / 2;
-        PlayerLifeBar.Y = Screen.Top - 40;
-        PlayerLifeBar.Angle = Angle.FromDegrees(90);
-        PlayerLifeBar.BindTo(PlayerLife);
-        PlayerLifeBar.Color = Color.Red;
-        PlayerLifeBar.BarColor = Color.Green;
-        Add(PlayerLifeBar);
-
-        if (PlayerLife == 0)
-        {
-            Dead();
-        }
 
         IdlePlayer();
 
@@ -420,6 +420,18 @@ public class Uskontopeli : PhysicsGame
         Add(PickA1);
     }
 
+    void AddHealthBox(Vector paikka, double korkeus, double leveys)
+    {
+        health = new PhysicsObject(100, 100);
+        health.Position = paikka;
+        health.Color = Color.Green;
+        health.MakeStatic();
+        health.IsVisible = true;
+        Add(health);
+
+        AddCollisionHandler(player, health, AddHealth);
+    }
+
     void ShowAFact(PhysicsObject tormaaja, PhysicsObject kohde)
     {
         FactNro++;
@@ -517,7 +529,22 @@ public class Uskontopeli : PhysicsGame
         fakta = new GameObject(300, 500);
         fakta.Position = player.Position;
         fakta.Image = Kuva;
+        fakta.MaximumLifetime = TimeSpan.FromSeconds(20);
         Add(fakta);
+    }
+
+    void AddHealth(PhysicsObject tormaaja, PhysicsObject kohde)
+    {
+        if(PlayerLife <100)
+        {
+            kohde.Destroy();
+            PlayerLife.Value += 20;
+            
+        }
+        else
+        {
+            MessageDisplay.Add("Sinulla on jo täydet elämät!");
+        }
     }
 
     void Dead()
