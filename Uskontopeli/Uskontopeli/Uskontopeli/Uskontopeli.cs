@@ -34,7 +34,6 @@ public class Uskontopeli : PhysicsGame
     [Save] public int FactNro = 0;
 
     [Save] public DoubleMeter PlayerLife;
-    int healthvalue = 100;
 
     public override void Begin()
     {
