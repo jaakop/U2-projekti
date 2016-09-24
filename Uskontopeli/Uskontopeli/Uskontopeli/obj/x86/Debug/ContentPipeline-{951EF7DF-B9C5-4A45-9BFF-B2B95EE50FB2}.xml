@@ -208,6 +208,42 @@
       <Output>C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\tilanne.xnb</Output>
       <Time>2016-09-19T18:38:38.3876465+03:00</Time>
     </Item>
+    <Item>
+      <Source>Hiekka.png</Source>
+      <Name>Hiekka</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\Hiekka.xnb</Output>
+      <Time>2016-09-24T14:49:37.5992304+03:00</Time>
+    </Item>
+    <Item>
+      <Source>seinä.png</Source>
+      <Name>seinä</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\seinä.xnb</Output>
+      <Time>2016-09-24T14:37:33.5091031+03:00</Time>
+    </Item>
+    <Item>
+      <Source>Fakta2.png</Source>
+      <Name>Fakta2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\Fakta2.xnb</Output>
+      <Time>2016-09-24T15:03:03.3109573+03:00</Time>
+    </Item>
+    <Item>
+      <Source>Fakta3.png</Source>
+      <Name>Fakta3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\Fakta3.xnb</Output>
+      <Time>2016-09-24T15:03:47.0484807+03:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{951EF7DF-B9C5-4A45-9BFF-B2B95EE50FB2}</ContentProjectGUID>

@@ -29,6 +29,10 @@ public class Uskontopeli : PhysicsGame
     Image projectile1 = LoadImage("Projectile1");
     Image Pappikuva = LoadImage("PappiAnimA1");
     Image Fact1Image = LoadImage("Fakta1");
+    Image Fact2Image = LoadImage("Fakta2");
+    Image Fact3Image = LoadImage("Fakta3");
+    Image Seinakuva = LoadImage("seinä");
+    Image taustaKuva = LoadImage("Hiekka");
 
     [Save] public int KenttaNumero = 1;
     [Save] public int FactNro = 0;
@@ -77,7 +81,9 @@ public class Uskontopeli : PhysicsGame
     void NextLevel()
     {
         ClearAll();
-
+        Level.Background.Color = Color.Wheat;
+        //Level.Background.Image = taustaKuva;
+        //Level.Background.TileToLevel();
 
         PlayerLife = new DoubleMeter(100);
         PlayerLife.MaxValue = 100;
@@ -124,6 +130,7 @@ public class Uskontopeli : PhysicsGame
         Wall.Color = Color.Black;
         Wall.CollisionIgnoreGroup = 2;
         Wall.Position = paikka;
+        Wall.Image = Seinakuva;
         Wall.MakeStatic();
         Wall.CanRotate = false;
         Add(Wall);
@@ -446,7 +453,12 @@ public class Uskontopeli : PhysicsGame
 
         else if (FactNro == 2)
         {
-            fakta.Image = Pappikuva;
+            fakta.Image = Fact2Image;
+        }
+
+        else if (FactNro == 3)
+        {
+            fakta.Image = Fact3Image;
         }
 
         kohde.Destroy();
@@ -511,9 +523,36 @@ public class Uskontopeli : PhysicsGame
             FaktaMenu.AddItemHandler(1, delegate
             {
                 FaktaMenu.Destroy();
-                ShowAFact2(Pappikuva);
+                ShowAFact2(Fact2Image);
             });
             FaktaMenu.AddItemHandler(2, delegate
+            {
+                PauseMenu();
+                FaktaMenu.Destroy();
+            }
+            );
+            Add(FaktaMenu);
+        }
+
+        else if (FactNro == 3)
+        {
+            MultiSelectWindow FaktaMenu = new MultiSelectWindow("Kerätyt faktat", "fakta 1", "fakta 2", "fakta 3","takaisin");
+            FaktaMenu.AddItemHandler(0, delegate
+            {
+                FaktaMenu.Destroy();
+                ShowAFact2(Fact1Image);
+            }
+            );
+            FaktaMenu.AddItemHandler(1, delegate
+            {
+                FaktaMenu.Destroy();
+                ShowAFact2(Fact2Image);
+            }); FaktaMenu.AddItemHandler(1, delegate
+            {
+                FaktaMenu.Destroy();
+                ShowAFact2(Fact3Image);
+            });
+            FaktaMenu.AddItemHandler(3, delegate
             {
                 PauseMenu();
                 FaktaMenu.Destroy();
