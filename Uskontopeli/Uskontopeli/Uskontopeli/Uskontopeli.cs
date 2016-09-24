@@ -547,7 +547,7 @@ public class Uskontopeli : PhysicsGame
             {
                 FaktaMenu.Destroy();
                 ShowAFact2(Fact2Image);
-            }); FaktaMenu.AddItemHandler(1, delegate
+            }); FaktaMenu.AddItemHandler(2, delegate
             {
                 FaktaMenu.Destroy();
                 ShowAFact2(Fact3Image);
