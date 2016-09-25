@@ -85,17 +85,6 @@ public class Uskontopeli : PhysicsGame
         //Level.Background.Image = taustaKuva;
         //Level.Background.TileToLevel();
 
-        PlayerLife = new DoubleMeter(100);
-        PlayerLife.MaxValue = 100;
-        BarGauge PlayerLifeBar = new BarGauge(20, Screen.Width / 3);
-        PlayerLifeBar.X = Screen.Left + Screen.Width / 2;
-        PlayerLifeBar.Y = Screen.Top - 40;
-        PlayerLifeBar.Angle = Angle.FromDegrees(90);
-        PlayerLifeBar.BindTo(PlayerLife);
-        PlayerLifeBar.Color = Color.Red;
-        PlayerLifeBar.BarColor = Color.Green;
-        Add(PlayerLifeBar);
-
         if (KenttaNumero == 1) Luokentta("Kartta1");
         else if (KenttaNumero == 2) Luokentta("mapui2");
         else if (KenttaNumero == 3) Luokentta("Kartta3");
@@ -157,6 +146,17 @@ public class Uskontopeli : PhysicsGame
         player.Add(playerWeapon1);
 
         IdlePlayer();
+
+        PlayerLife = new DoubleMeter(100);
+        PlayerLife.MaxValue = 100;
+        BarGauge PlayerLifeBar = new BarGauge(20, Screen.Width / 3);
+        PlayerLifeBar.X = Screen.Left + Screen.Width / 2;
+        PlayerLifeBar.Y = Screen.Top - 40;
+        PlayerLifeBar.Angle = Angle.FromDegrees(90);
+        PlayerLifeBar.BindTo(PlayerLife);
+        PlayerLifeBar.Color = Color.Red;
+        PlayerLifeBar.BarColor = Color.Green;
+        Add(PlayerLifeBar);
 
     }
 
