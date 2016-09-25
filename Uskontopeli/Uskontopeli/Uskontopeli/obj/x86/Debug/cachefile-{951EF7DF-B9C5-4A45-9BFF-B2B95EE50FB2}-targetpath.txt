@@ -21,4 +21,8 @@ Content\Kartta3.xnb
 Content\Kartta4.xnb
 Content\Fakta1.xnb
 Content\tilanne.xnb
+Content\Hiekka.xnb
+Content\seinä.xnb
+Content\Fakta2.xnb
+Content\Fakta3.xnb
 Content\Kartta1.png
