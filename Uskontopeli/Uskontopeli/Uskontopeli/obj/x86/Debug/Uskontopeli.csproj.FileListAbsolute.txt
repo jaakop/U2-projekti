@@ -65,3 +65,6 @@ C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debu
 C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\seinä.xnb
 C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\Fakta2.xnb
 C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\Fakta3.xnb
+C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\Fakta5.xnb
+C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\Fakta8.xnb
+C:\Users\w7\Desktop\U2-projekti\Uskontopeli\Uskontopeli\Uskontopeli\bin\x86\Debug\Content\Fakta4.xnb
