@@ -31,6 +31,9 @@ public class Uskontopeli : PhysicsGame
     Image Fact1Image = LoadImage("Fakta1");
     Image Fact2Image = LoadImage("Fakta2");
     Image Fact3Image = LoadImage("Fakta3");
+    Image Fact4Image = LoadImage("Fakta4");
+    Image Fact5Image = LoadImage("Fakta5");
+    Image Fact8Image = LoadImage("Fakta8");
     Image Seinakuva = LoadImage("seinä");
     Image taustaKuva = LoadImage("Hiekka");
 
@@ -266,7 +269,7 @@ public class Uskontopeli : PhysicsGame
             PauseMenu();
         },null);
 
-        Keyboard.Listen(Key.Space, ButtonState.Pressed, delegate
+        Keyboard.Listen(Key.Enter, ButtonState.Pressed, delegate
         {
             if (fakta == null)
             {
@@ -275,10 +278,14 @@ public class Uskontopeli : PhysicsGame
             else
             {
                 fakta.Destroy();
-                FactMenu();
             }
         }
 , null);
+        Keyboard.Listen(Key.F9, ButtonState.Pressed, delegate
+        {
+            MessageDisplay.Add("factnum: " + FactNro);
+        }, null
+        );
 
         Keyboard.Listen(Key.P, ButtonState.Pressed, Pause, null);
 
@@ -461,17 +468,35 @@ public class Uskontopeli : PhysicsGame
             fakta.Image = Fact3Image;
         }
 
+        else if (FactNro == 4)
+        {
+            fakta.Image = Fact4Image;
+        }
+
+        else if (FactNro == 5)
+        {
+            fakta.Image = Fact5Image;
+        }
+
+        else if (FactNro == 6)
+        {
+            fakta.Image = Fact8Image;
+        }
+
+        else
+        {
+            MessageDisplay.Add("Olet jo kerännyt kaikki faktat!");
+        }
+
         kohde.Destroy();
 
-        Keyboard.Listen(Key.Enter, ButtonState.Pressed, delegate
-        {
-            fakta.Destroy();
-        }
-        ,null);
+        Timer.SingleShot(10, fakta.Destroy);
     }
-    
+
      void PauseMenu()
     {
+        ClearControls();
+        AddControlls();
 
         MultiSelectWindow PauseValikko = new MultiSelectWindow("Peli on pysäytty", "Jatka peliä", "Kerätyt faktat", "Päävalikko");
         PauseValikko.AddItemHandler(0, Pause);
@@ -482,16 +507,15 @@ public class Uskontopeli : PhysicsGame
 
     void FactMenu()
     {
+        ClearControls();
         if (FactNro == 0)
         {
             MultiSelectWindow FaktaMenu = new MultiSelectWindow("Et ole löytänyt yhtään faktaa vielä", "Jatka peliä");
             FaktaMenu.AddItemHandler(0, delegate
             {
                 FaktaMenu.Destroy();
-                Pause
-                ();
-            }
-            );
+                Pause();
+            });
             Add(FaktaMenu);
         }
        else if (FactNro == 1)
@@ -501,8 +525,7 @@ public class Uskontopeli : PhysicsGame
             {
                 FaktaMenu.Destroy();
                 ShowAFact2(Fact1Image);
-            }
-            );
+            } );
             FaktaMenu.AddItemHandler(1, delegate
             {
                 PauseMenu();
@@ -518,8 +541,7 @@ public class Uskontopeli : PhysicsGame
             {
                 FaktaMenu.Destroy();
                 ShowAFact2(Fact1Image);
-            }
-            );
+            });
             FaktaMenu.AddItemHandler(1, delegate
             {
                 FaktaMenu.Destroy();
@@ -529,8 +551,7 @@ public class Uskontopeli : PhysicsGame
             {
                 PauseMenu();
                 FaktaMenu.Destroy();
-            }
-            );
+            });
             Add(FaktaMenu);
         }
 
@@ -541,13 +562,13 @@ public class Uskontopeli : PhysicsGame
             {
                 FaktaMenu.Destroy();
                 ShowAFact2(Fact1Image);
-            }
-            );
+            });
             FaktaMenu.AddItemHandler(1, delegate
             {
                 FaktaMenu.Destroy();
                 ShowAFact2(Fact2Image);
-            }); FaktaMenu.AddItemHandler(2, delegate
+            });
+            FaktaMenu.AddItemHandler(2, delegate
             {
                 FaktaMenu.Destroy();
                 ShowAFact2(Fact3Image);
@@ -556,10 +577,82 @@ public class Uskontopeli : PhysicsGame
             {
                 PauseMenu();
                 FaktaMenu.Destroy();
-            }
-            );
+            });
             Add(FaktaMenu);
         }
+
+        else if (FactNro == 4)
+        {
+            MultiSelectWindow FaktaMenu = new MultiSelectWindow("Kerätyt faktat", "fakta 1", "fakta 2", "fakta 3", "fakta4", "takaisin");
+            FaktaMenu.AddItemHandler(0, delegate
+            {
+                FaktaMenu.Destroy();
+                ShowAFact2(Fact1Image);
+            });
+            FaktaMenu.AddItemHandler(1, delegate
+            {
+                FaktaMenu.Destroy();
+                ShowAFact2(Fact2Image);
+            });
+            FaktaMenu.AddItemHandler(2, delegate
+            {
+                FaktaMenu.Destroy();
+                ShowAFact2(Fact3Image);
+            });
+            FaktaMenu.AddItemHandler(3, delegate
+            {
+                FaktaMenu.Destroy();
+                ShowAFact2(Fact4Image);
+            });
+            FaktaMenu.AddItemHandler(4, delegate
+            {
+                PauseMenu();
+                FaktaMenu.Destroy();
+            });
+            Add(FaktaMenu);
+        }
+
+        else
+        {
+            MultiSelectWindow FaktaMenu = new MultiSelectWindow("Kerätyt faktat", "fakta 1", "fakta 2", "fakta 3", "fakta4", "fakta5","takaisin");
+            FaktaMenu.AddItemHandler(0, delegate
+            {
+                FaktaMenu.Destroy();
+                ShowAFact2(Fact1Image);
+            } );
+            FaktaMenu.AddItemHandler(1, delegate
+            {
+                FaktaMenu.Destroy();
+                ShowAFact2(Fact2Image);
+            });
+            FaktaMenu.AddItemHandler(2, delegate
+            {
+                FaktaMenu.Destroy();
+                ShowAFact2(Fact3Image);
+            });
+            FaktaMenu.AddItemHandler(3, delegate
+            {
+                FaktaMenu.Destroy();
+                ShowAFact2(Fact4Image);
+            });
+            FaktaMenu.AddItemHandler(4, delegate
+            {
+                FaktaMenu.Destroy();
+                ShowAFact2(Fact5Image);
+            });
+            FaktaMenu.AddItemHandler(5, delegate
+            {
+                PauseMenu();
+                FaktaMenu.Destroy();
+            });
+            Add(FaktaMenu);
+        }
+        Keyboard.Listen(Key.Enter, ButtonState.Pressed, delegate
+        {
+            fakta.Destroy();
+            FactMenu();
+        }, null
+        );
     }
 
     void ShowAFact2 (Image Kuva)
